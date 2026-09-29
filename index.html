@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tejas Patil · Data & AI Engineer</title>
+<meta name="description" content="Portfolio of Tejas Patil, Data & AI Engineer with 5.5+ years across Snowflake, AWS and Azure.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=DM+Sans:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+/* ============ BACKGROUND PALETTES ============
+ To try one: copy its values over --bg, --a, --b, --c in BOTH the light block (:root) and the dark block (:root[data-theme=dark]) below.
+ --bg = page colour, --a/--b/--c = the three glowing blobs behind the glass (also used for accents).
+ SUNSET   light: #fff4ec #ff6b3d #ffb703 #e11d74 | dark: #170a10 #ff7a50 #ffc233 #f43f8e
+ EMERALD  light: #edf7f1 #10a36b #2bb5c9 #7c9c2a | dark: #06130e #34d399 #22d3ee #a3e635
+ ORCHID   light: #f7f0fb #a855f7 #ec4899 #6366f1 | dark: #0e0a1a #c084fc #f472b6 #818cf8
+ GOLD     light: #f3f1ec #b8862b #6b7280 #0f766e | dark: #0b0b0d #e0b355 #94a3b8 #2dd4bf
+ OCEAN (current default) light: #eef3fb #2f6bff #12b5a6 #8b5cf6 | dark: #070d1c #5b8cff #2dd4bf #a78bfa
+ ============================================= */
+:root{--bg:#f3f1ec;--tx:#12203a;--mu:#51617f;--gl:rgba(255,255,255,.55);--bd:rgba(255,255,255,.75);--sh:0 8px 32px rgba(40,70,140,.14);--a:#b8862b;--b:#6b7280;--c:#0f766e}
+:root[data-theme=dark]{--bg:#0b0b0d;--tx:#e8eefc;--mu:#9aa9c7;--gl:rgba(255,255,255,.06);--bd:rgba(255,255,255,.14);--sh:0 8px 32px rgba(0,0,0,.45);--a:#e0b355;--b:#94a3b8;--c:#2dd4bf}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font:16px/1.65 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;transition:background .3s}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.2}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.bg i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
+.bg i:nth-child(1){width:46vw;height:46vw;background:var(--a);top:-12vw;left:-8vw}
+.bg i:nth-child(2){width:38vw;height:38vw;background:var(--b);top:30vh;right:-10vw;opacity:.4}
+.bg i:nth-child(3){width:34vw;height:34vw;background:var(--c);bottom:-12vw;left:20vw;opacity:.4}
+.glass{background:var(--gl);border:1px solid var(--bd);box-shadow:var(--sh);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-radius:22px}
+a{color:inherit}
+nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1080px,94%);z-index:9;display:flex;align-items:center;gap:14px;padding:8px 14px;border-radius:999px}
+nav b{font-family:Sora;margin-right:auto}
+nav .l{display:flex;gap:4px}
+nav .l a{text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px;color:var(--mu)}
+nav .l a:hover{color:var(--tx);background:var(--gl)}
+.ctl{display:flex;gap:8px}
+.ctl button,.ctl select{font:inherit;font-size:14px;color:var(--tx);background:var(--gl);border:1px solid var(--bd);border-radius:999px;padding:5px 12px;cursor:pointer}
+.ctl select option{color:#12203a}
+:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+main{width:min(1080px,92%);margin:0 auto}
+section{padding:72px 0 8px}
+h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:24px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;min-height:100vh;padding-top:110px}
+.hero h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.02em}
+.hero h1 span{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:Sora;font-size:clamp(17px,2.2vw,22px);margin:14px 0;color:var(--mu)}
+.hero p.s{max-width:56ch;color:var(--mu)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:500;border:1px solid var(--bd);background:var(--gl)}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--c));color:#fff;border:0}
+.pf{padding:14px;text-align:center}
+.av{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b),var(--c));display:grid;place-items:center;font:700 72px Sora;color:#fff}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pipe{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:14px;font-size:13px;color:var(--mu)}
+.pipe em{font-style:normal;padding:4px 9px;border-radius:999px;border:1px solid var(--bd);background:var(--gl)}
+.pipe s{flex:1;height:2px;background:linear-gradient(90deg,var(--a),var(--b));background-size:200% 100%;animation:flow 2.4s linear infinite}
+@keyframes flow{to{background-position:-200% 0}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.stat{padding:16px}.stat b{display:block;font:700 26px Sora}.stat span{font-size:13px;color:var(--mu)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{padding:22px}.card h3{font-size:18px;margin-bottom:8px}.card p,.card li{color:var(--mu);font-size:15px}
+.tl{position:relative;padding-left:26px;border-left:2px solid var(--bd);display:grid;gap:18px}
+.job{padding:22px;position:relative}
+.job:before{content:"";position:absolute;left:-36px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--b);box-shadow:0 0 0 4px var(--bg)}
+.job h3{font-size:18px}.job .m{color:var(--a);font-size:14px;margin:2px 0 10px}
+.job ul{padding-left:18px;display:grid;gap:6px;color:var(--mu);font-size:15px}
+.proj{display:flex;flex-direction:column;gap:10px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tags span,.chips span{font-size:13px;padding:3px 11px;border-radius:999px;border:1px solid var(--bd);background:var(--gl)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.card h3 small{display:block;font:500 13px 'DM Sans';color:var(--mu)}
+.cert{display:flex;gap:12px;align-items:center;padding:16px 18px}.cert i{font-style:normal;font-size:24px}
+.cert b{display:block;font-weight:500;font-size:15px;line-height:1.35}.cert span{font-size:13px;color:var(--mu)}
+.ct{text-align:center;padding:44px 24px}.ct p{color:var(--mu);margin-bottom:22px}
+footer{text-align:center;color:var(--mu);font-size:14px;padding:44px 0 30px}
+nav .l a{font-size:13px;padding:6px 8px}
+.code{overflow:hidden;font:13.5px/1.7 'JetBrains Mono',ui-monospace,monospace;margin-top:26px;max-width:560px}
+.code .bar{display:flex;gap:6px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--bd);color:var(--mu);font-size:12px}
+.code .bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.code .bar i:nth-child(2){background:#febc2e}.code .bar i:nth-child(3){background:#28c840}.code .bar span{margin-left:8px}
+.code pre{padding:12px 0;counter-reset:l;overflow-x:auto;white-space:normal;font:inherit}
+.code pre div{display:flex;gap:16px;padding:0 16px;counter-increment:l}
+.code pre div:before{content:counter(l);width:1.4em;text-align:right;color:var(--mu);opacity:.6;flex:none}
+.code pre div>span{min-width:0}.code b{font-weight:400}.code .k{color:var(--c)}.code .s{color:var(--b)}.code .n{color:var(--a)}.code .m{color:var(--mu)}.code .w{display:inline-block;width:1.6em}
+.logo{width:54px;height:54px;border-radius:14px;background:#fff;display:grid;place-items:center;position:relative;font:700 20px Sora;color:#12203a;overflow:hidden;flex:none}
+.logo img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:contain}
+.cl{text-decoration:none;display:flex;flex-direction:column;gap:10px}.cl .h{display:flex;gap:14px;align-items:center}.cl h3{font-size:17px;margin:0}.cl small{color:var(--mu)}
+.dm{align-self:flex-start;font-size:13px;padding:3px 11px;border-radius:999px;background:linear-gradient(90deg,var(--a),var(--c));color:#fff}
+.cc{display:block;text-decoration:none;overflow:hidden}.ci{aspect-ratio:16/10;background:rgba(255,255,255,.6);display:grid;place-items:center;font-size:42px;position:relative}
+.ci img{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:contain}
+.cc .t{padding:12px 16px}.cc b{display:block;font-weight:500;font-size:15px;line-height:1.35}.cc span{font-size:13px;color:var(--mu)}.cc em{display:block;font-style:normal;font-size:13px;color:var(--a);margin-top:6px}
+a.proj{text-decoration:none}.proj em{font-style:normal;color:var(--a);font-size:14px}
+.fm{display:grid;gap:12px;max-width:560px;margin:0 auto 20px;text-align:left}
+.fm input,.fm textarea{font:inherit;color:var(--tx);background:var(--gl);border:1px solid var(--bd);border-radius:14px;padding:11px 14px;width:100%}
+.fm button{cursor:pointer;font:inherit}
+@media(max-width:1000px){nav .l{display:none}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:0}.pf{max-width:300px;justify-self:center;order:-1}.stats{grid-template-columns:repeat(2,1fr)}nav .l{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<nav class="glass">
+  <b>TP</b>
+  <div class="l">
+    <a href="#about" data-i="n_about"></a><a href="#clients" data-i="n_clients"></a><a href="#exp" data-i="n_exp"></a><a href="#proj" data-i="n_proj"></a><a href="#tech" data-i="n_tech"></a><a href="#cert" data-i="n_cert"></a><a href="#contact" data-i="n_contact"></a>
+  </div>
+  <div class="ctl">
+    <select id="lang" aria-label="Language"><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option></select>
+    <button id="theme" aria-label="Toggle dark mode">🌙</button>
+  </div>
+</nav>
+
+<main>
+<section class="hero" id="top">
+  <div>
+    <p data-i="hi"></p>
+    <h1>Tejas <span>Patil</span></h1>
+    <div class="role" data-i="role"></div>
+    <p class="s" data-i="tag"></p>
+    <div class="btns">
+      <a class="btn p" href="#contact" data-i="cta1"></a>
+      <a class="btn" href="#proj" data-i="cta2"></a>
+      <!-- Put your PDF next to index.html and name it resume.pdf -->
+      <a class="btn" href="resume.pdf" download data-i="cta3"></a>
+      <a class="btn" href="https://www.linkedin.com/in/tejaspatil53" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="glass code"><div class="bar"><i></i><i></i><i></i><span>tejas.py</span></div><pre>
+<div><span><b class="k">engineer</b> = {</span></div>
+<div><span><i class="w"></i><b class="s">"name"</b>: <b class="s">"Tejas Patil"</b>,</span></div>
+<div><span><i class="w"></i><b class="s">"role"</b>: "<b class="s" data-i="role"></b>",</span></div>
+<div><span><i class="w"></i><b class="s">"stack"</b>: [<b class="s">"Snowflake"</b>, <b class="s">"AWS"</b>, <b class="s">"Azure"</b>, <b class="s">"Python"</b>, <b class="s">"SQL"</b>],</span></div>
+<div><span><i class="w"></i><b class="s">"years"</b>: <b class="n">5.5</b>,</span></div>
+<div><span><i class="w"></i><b class="s">"status"</b>: "<b class="s" data-i="open"></b>"</span></div>
+<div><span>}</span></div></pre></div>
+    <div class="stats">
+      <div class="glass stat"><b>5.5+</b><span data-i="s1"></span></div>
+      <div class="glass stat"><b>250+</b><span data-i="s2"></span></div>
+      <div class="glass stat"><b>35+</b><span data-i="s3"></span></div>
+      <div class="glass stat"><b>120+</b><span data-i="s4"></span></div>
+    </div>
+  </div>
+  <div class="glass pf">
+    <!-- Put your photo next to this file as profile.jpg; initials show until then -->
+    <div class="av">TP<img src="profile.jpg" alt="Tejas Patil" onerror="this.remove()"></div>
+    <div class="pipe"><em>Raw</em><s></s><em>Model</em><s></s><em>AI</em></div>
+  </div>
+</section>
+
+<section id="about"><h2 data-i="n_about"></h2>
+  <div class="glass code" style="max-width:none;margin:0"><div class="bar"><i></i><i></i><i></i><span>about_me.py</span></div><pre>
+<div><span><b class="k">class</b> <b class="n">Tejas</b>:</span></div>
+<div><span><i class="w"></i><b class="m">"""<span data-i="about"></span>"""</b></span></div>
+<div><span><i class="w"></i><b class="k">focus</b> = [<b class="s">"data platforms"</b>, <b class="s">"ELT"</b>, <b class="s">"cloud migration"</b>, <b class="s">"GenAI"</b>]</span></div></pre></div>
+</section>
+
+<section id="why"><h2 data-i="n_why"></h2>
+  <div class="grid">
+    <div class="glass card"><h3 data-i="w1t"></h3><p data-i="w1"></p></div>
+    <div class="glass card"><h3 data-i="w2t"></h3><p data-i="w2"></p></div>
+    <div class="glass card"><h3 data-i="w3t"></h3><p data-i="w3"></p></div>
+    <div class="glass card"><h3 data-i="w4t"></h3><p data-i="w4"></p></div>
+  </div>
+</section>
+
+<section id="exp"><h2 data-i="n_exp"></h2>
+  <div class="tl">
+    <div class="glass job"><h3>UXLI Limited · Data Engineer</h3><div class="m" data-i="j1d"></div>
+      <ul><li data-i="j1a"></li><li data-i="j1b"></li><li data-i="j1c"></li><li data-i="j1d2"></li></ul></div>
+    <div class="glass job"><h3>UXLI Limited · Application Developer & Data Engineer</h3><div class="m">Jan 2022 – Mar 2023</div>
+      <ul><li data-i="j2a"></li><li data-i="j2b"></li></ul></div>
+    <div class="glass job"><h3>UXLI Limited · Engineer Trainee</h3><div class="m">Jan 2021 – Dec 2021</div>
+      <ul><li data-i="j3a"></li></ul></div>
+    <div class="glass job"><h3>UXLI Limited · Intern</h3><div class="m">Oct 2020 – Dec 2020</div>
+      <ul><li data-i="j4a"></li></ul></div>
+  </div>
+</section>
+
+<section id="clients"><h2 data-i="n_clients"></h2>
+  <!-- Logos: save as assets/logos/vodacom.png, starhub.png, transport.png. Until they exist, a letter is shown. Confirm your client is OK with being named. -->
+  <div class="grid">
+    <a class="glass card cl" href="https://www.vodacom.co.za" target="_blank" rel="noopener"><div class="h"><div class="logo">V<img src="assets/logos/vodacom.png" alt="Vodacom" onerror="this.remove()"></div><div><h3>Vodacom</h3><small data-i="cy1"></small></div></div><span class="dm" data-i="d_tel"></span><p data-i="c1"></p></a>
+    <a class="glass card cl" href="https://www.starhub.com" target="_blank" rel="noopener"><div class="h"><div class="logo">S<img src="assets/logos/starhub.png" alt="StarHub" onerror="this.remove()"></div><div><h3>StarHub</h3><small data-i="cy2"></small></div></div><span class="dm" data-i="d_tel"></span><p data-i="c2"></p></a>
+    <!-- Add the transportation client's name, site and logo here -->
+    <div class="glass card cl"><div class="h"><div class="logo">T<img src="assets/logos/transport.png" alt="" onerror="this.remove()"></div><div><h3 data-i="d_tr"></h3></div></div><span class="dm" data-i="d_tr"></span><p data-i="c3"></p></div>
+  </div>
+</section>
+
+<section id="proj"><h2 data-i="n_proj"></h2>
+  <div class="grid">
+    <div class="glass card proj"><h3 data-i="p1t"></h3><p data-i="p1"></p><div class="tags"><span>Snowflake</span><span>AWS</span><span>Python</span><span>SQL</span></div></div>
+    <div class="glass card proj"><h3 data-i="p2t"></h3><p data-i="p2"></p><div class="tags"><span>Airbyte</span><span>Python</span><span>APIs</span></div></div>
+    <div class="glass card proj"><h3 data-i="p3t"></h3><p data-i="p3"></p><div class="tags"><span>AWS Glue</span><span>EC2</span><span>S3</span></div></div>
+    <div class="glass card proj"><h3 data-i="p4t"></h3><p data-i="p4"></p><div class="tags"><span>Logic Apps</span><span>Functions</span><span>App Insights</span></div></div>
+  </div>
+</section>
+
+<section id="pp"><h2 data-i="n_pp"></h2>
+  <!-- Replace each href with your GitHub repo and the text with your own project (keys pt / pd in the T object apply to all three) -->
+  <div class="grid">
+    <a class="glass card proj" href="https://github.com/YOUR-USERNAME/PROJECT-1" target="_blank" rel="noopener"><h3 data-i="pt"></h3><p data-i="pd"></p><div class="tags"><span>Snowflake</span><span>Python</span></div><em data-i="pl"></em></a>
+    <a class="glass card proj" href="https://github.com/YOUR-USERNAME/PROJECT-2" target="_blank" rel="noopener"><h3 data-i="pt"></h3><p data-i="pd"></p><div class="tags"><span>GenAI</span><span>OCI</span></div><em data-i="pl"></em></a>
+    <a class="glass card proj" href="https://github.com/YOUR-USERNAME/PROJECT-3" target="_blank" rel="noopener"><h3 data-i="pt"></h3><p data-i="pd"></p><div class="tags"><span>AWS</span><span>SQL</span></div><em data-i="pl"></em></a>
+  </div>
+</section>
+
+<section id="tech"><h2 data-i="n_tech"></h2>
+  <div class="grid">
+    <div class="glass card"><h3 data-i="t1"></h3><div class="chips"><span>Snowflake</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>Redshift</span><span>Synapse</span><span>Cosmos DB</span></div></div>
+    <div class="glass card"><h3 data-i="t2"></h3><div class="chips"><span>Azure Data Factory</span><span>AWS Glue</span><span>Airbyte</span><span>Snowflake Tasks</span><span>Stored Procs / UDFs</span></div></div>
+    <div class="glass card"><h3 data-i="t3"></h3><div class="chips"><span>AWS</span><span>Azure</span><span>GCP</span><span>Lambda</span><span>Azure Functions</span><span>Logic Apps</span></div></div>
+    <div class="glass card"><h3 data-i="t4"></h3><div class="chips"><span>Python</span><span>SQL</span><span>OCI Generative AI</span></div></div>
+    <div class="glass card"><h3 data-i="t5"></h3><div class="chips"><span>Power BI</span><span>Excel</span><span>Job monitoring dashboards</span></div></div>
+    <div class="glass card"><h3 data-i="t6"></h3><div class="chips"><span>Azure DevOps</span><span>GitHub</span><span>CodeCommit</span><span>Postman</span><span>JMeter</span><span>Jira</span><span>Lucidchart</span></div></div>
+  </div>
+</section>
+
+<section id="cert"><h2 data-i="n_cert"></h2>
+  <div class="grid">
+  <!-- Images: assets/certs/<name>.png. Links: replace with your Credly / Microsoft / Oracle / Coursera credential URLs -->
+    <a class="glass cc" href="https://www.credly.com/users/YOUR-NAME" target="_blank" rel="noopener"><div class="ci">❄️<img src="assets/certs/snowpro.png" alt="SnowPro Core" onerror="this.remove()"></div><div class="t"><b>SnowPro Core</b><span>Snowflake Inc</span><em data-i="vf"></em></div></a>
+    <a class="glass cc" href="https://catalog-education.oracle.com/pls/certview/YOUR-LINK" target="_blank" rel="noopener"><div class="ci">🤖<img src="assets/certs/oci-genai.png" alt="OCI Generative AI Certified Professional" onerror="this.remove()"></div><div class="t"><b>OCI Generative AI Certified Professional</b><span>Oracle</span><em data-i="vf"></em></div></a>
+    <a class="glass cc" href="https://learn.microsoft.com/users/YOUR-NAME" target="_blank" rel="noopener"><div class="ci">☁️<img src="assets/certs/dp900.png" alt="Azure Data Fundamentals (DP-900)" onerror="this.remove()"></div><div class="t"><b>Azure Data Fundamentals (DP-900)</b><span>Microsoft</span><em data-i="vf"></em></div></a>
+    <a class="glass cc" href="https://learn.microsoft.com/users/YOUR-NAME" target="_blank" rel="noopener"><div class="ci">☁️<img src="assets/certs/az900.png" alt="Azure Fundamentals (AZ-900)" onerror="this.remove()"></div><div class="t"><b>Azure Fundamentals (AZ-900)</b><span>Microsoft</span><em data-i="vf"></em></div></a>
+    <a class="glass cc" href="https://coursera.org/verify/YOUR-ID" target="_blank" rel="noopener"><div class="ci">📊<img src="assets/certs/excel.png" alt="MS Excel" onerror="this.remove()"></div><div class="t"><b>MS Excel</b><span>Macquarie University · Coursera</span><em data-i="vf"></em></div></a>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="glass card"><h3 data-i="edu"></h3><p data-i="edu_t"></p></div>
+    <div class="glass card"><h3 data-i="aw"></h3><p data-i="aw_t"></p></div>
+    <div class="glass card"><h3 data-i="lg"></h3><p data-i="lg_t"></p></div>
+  </div>
+</section>
+
+<section id="contact"><h2 data-i="n_contact"></h2>
+  <div class="glass ct"><p data-i="ct"></p>
+    <!-- Form: create a free form at formspree.io and replace YOUR_FORM_ID. Until then, Send opens your email app instead. -->
+    <form class="fm" id="fm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input name="name" required data-ph="f_n"><input name="email" type="email" required data-ph="f_e">
+      <textarea name="message" rows="4" required data-ph="f_m"></textarea>
+      <button class="btn p" type="submit" data-i="f_s"></button><small id="fs"></small>
+    </form>
+    <div class="btns" style="justify-content:center">
+      <a class="btn" href="mailto:tejaspatil53@gmail.com">tejaspatil53@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/tejaspatil53" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="resume.pdf" download data-i="cta3"></a>
+    </div></div>
+</section>
+</main>
+<footer>© <span id="yr"></span> Tejas Patil</footer>
+
+<script>
+const T={
+en:{n_clients:"Clients & domains",n_pp:"Personal projects",cta3:"Download résumé",open:"open to Data & AI roles",cy1:"South Africa",cy2:"Singapore",d_tel:"Telecom",d_tr:"Transportation",c1:"On-prem to AWS migration using Glue and EC2, plus ADF orchestration.",c2:"IBM to Snowflake data platform: 250+ pipelines from 35+ source systems.",c3:"Alerting with Logic Apps, Functions and App Insights.",pt:"Your project title",pd:"Two lines on the problem, what you built and the result.",pl:"View on GitHub",vf:"Verify credential",f_n:"Your name",f_e:"Your email",f_m:"Message",f_s:"Send message",f_ok:"Thanks! Your message is on its way.",n_about:"About",n_why:"Why hire me",n_exp:"Experience",n_proj:"Projects",n_tech:"Tools & technologies",n_cert:"Certifications",n_contact:"Contact",
+hi:"Hi, I'm",role:"Data & AI Engineer",tag:"I build cloud data platforms on Snowflake, AWS and Azure that turn raw data into reliable insight, and I'm now taking that foundation into generative AI.",
+cta1:"Get in touch",cta2:"See my work",s1:"years of experience",s2:"ingestion pipelines built",s3:"source systems migrated",s4:"product features driven",
+about:"I'm a cloud-native Data & AI Engineer with 5.5+ years of hands-on experience designing and delivering scalable data platforms across AWS, Azure and Snowflake. My work covers cloud migrations, ingestion frameworks, ETL/ELT design and pipeline orchestration. I care about performance, observability and clean data models, and I'm building on that base with generative AI (OCI Generative AI certified).",
+w1t:"Proven at scale",w1:"Delivered 250+ ingestion pipelines and migrated 35+ source systems from IBM to Snowflake for a leading telecom in Singapore.",
+w2t:"Multi-cloud fluency",w2:"Production experience on AWS, Azure and Snowflake, from Glue and Lambda to Data Factory and Logic Apps.",
+w3t:"Performance-minded",w3:"Ran monthly performance testing of ingestion, AWS infrastructure and Snowflake, reaching 95% efficiency.",
+w4t:"Product thinker",w4:"Worked with a tool's product team to drive 120+ features that took an early-stage ELT tool to production grade.",
+j1d:"Apr 2023 – Present",j1a:"Led a data platform project for a leading telecom in Singapore, moving 35+ IBM source systems to Snowflake on AWS.",
+j1b:"Built 250+ full, incremental and dedupe ingestion pipelines from files (JSON, XML, CSV, XLS), APIs (Salesforce, Adobe) and databases (Oracle, MySQL, PostgreSQL, SQL Server).",
+j1c:"Designed monitoring dashboards for ingestion objects, Snowflake tasks and raw-to-modelled data movement via stored procedures and UDFs.",
+j1d2:"Helped mature “Data Pipes”, an Airbyte-based ETL/ELT tool, by reporting issues and feature gaps daily, leading to 120+ enhancements.",
+j2a:"Migrated a South African telecom's workloads from on-prem to AWS, building infrastructure with Glue and EC2. Built ADF pipelines for orchestration.",
+j2b:"Created alerting with Azure Logic Apps, Functions and App Insights for a transportation client, and designed complex stored procedures.",
+j3a:"Designed REST APIs and Azure Data Factory pipelines, ran functional and non-functional testing, and delivered client-ready documentation.",
+j4a:"Wrote SQL and managed PostgreSQL databases for proofs of concept, with first exposure to AWS, Azure and GCP.",
+p1t:"IBM to Snowflake migration",p1:"Moved 35+ source systems for a Singapore telecom to a Snowflake data platform on AWS, with monthly performance testing.",
+p2t:"Data Pipes ELT tool",p2:"Drove 120+ features and fixes on an Airbyte-based tool, turning an early prototype into a scalable production solution.",
+p3t:"On-prem to AWS cloud migration",p3:"Rebuilt data infrastructure for a South African telecom on AWS using Glue and EC2.",
+p4t:"Azure alerting system",p4:"Automated alerts for a transportation client with Logic Apps, Functions and Application Insights.",
+t1:"Databases & warehousing",t2:"ETL / ELT & orchestration",t3:"Cloud & serverless",t4:"Languages & AI",t5:"BI & reporting",t6:"DevOps, testing & delivery",
+edu:"Education",edu_t:"B.E. Mechanical, Savitribai Phule Pune University. CGPA 8.37/10, First Class with Distinction (2016–2020).",
+aw:"Awards",aw_t:"Rising Star of the Year 2021 and multiple Star of the Month recognitions at UXLI Limited.",
+lg:"Languages",lg_t:"English (full professional), Hindi and Marathi (native), German and French (elementary).",
+ct:"Open to Data & AI engineering roles and interesting data problems. Let's talk."},
+de:{n_clients:"Kunden & Branchen",n_pp:"Persönliche Projekte",cta3:"Lebenslauf herunterladen",open:"offen für Data- & AI-Rollen",cy1:"Südafrika",cy2:"Singapur",d_tel:"Telekommunikation",d_tr:"Transport",c1:"Migration von On-Prem zu AWS mit Glue und EC2, plus ADF-Orchestrierung.",c2:"Datenplattform von IBM zu Snowflake: 250+ Pipelines aus 35+ Quellsystemen.",c3:"Alarmierung mit Logic Apps, Functions und App Insights.",pt:"Ihr Projekttitel",pd:"Zwei Zeilen zu Problem, Lösung und Ergebnis.",pl:"Auf GitHub ansehen",vf:"Zertifikat prüfen",f_n:"Ihr Name",f_e:"Ihre E-Mail",f_m:"Nachricht",f_s:"Nachricht senden",f_ok:"Danke! Ihre Nachricht ist unterwegs.",n_about:"Über mich",n_why:"Warum ich",n_exp:"Erfahrung",n_proj:"Projekte",n_tech:"Tools & Technologien",n_cert:"Zertifikate",n_contact:"Kontakt",
+hi:"Hallo, ich bin",role:"Data & AI Engineer",tag:"Ich baue Cloud-Datenplattformen auf Snowflake, AWS und Azure, die Rohdaten in verlässliche Erkenntnisse verwandeln, und erweitere dieses Fundament jetzt um generative KI.",
+cta1:"Kontakt aufnehmen",cta2:"Meine Arbeit",s1:"Jahre Erfahrung",s2:"Ingestion-Pipelines gebaut",s3:"Quellsysteme migriert",s4:"Produktfeatures angestoßen",
+about:"Ich bin ein Cloud-nativer Data & AI Engineer mit über 5,5 Jahren praktischer Erfahrung im Entwurf und der Umsetzung skalierbarer Datenplattformen auf AWS, Azure und Snowflake. Mein Schwerpunkt liegt auf Cloud-Migrationen, Ingestion-Frameworks, ETL/ELT-Design und Pipeline-Orchestrierung. Performance, Beobachtbarkeit und saubere Datenmodelle sind mir wichtig, und darauf baue ich mit generativer KI auf (OCI Generative AI zertifiziert).",
+w1t:"Im großen Maßstab bewährt",w1:"250+ Ingestion-Pipelines geliefert und 35+ Quellsysteme für einen führenden Telekommunikationsanbieter in Singapur von IBM zu Snowflake migriert.",
+w2t:"Multi-Cloud-Kompetenz",w2:"Praxis in Produktion auf AWS, Azure und Snowflake, von Glue und Lambda bis Data Factory und Logic Apps.",
+w3t:"Performance-orientiert",w3:"Monatliche Performance-Tests für Ingestion, AWS-Infrastruktur und Snowflake, mit 95 % Effizienz.",
+w4t:"Produktdenken",w4:"Mit dem Produktteam eines Tools 120+ Features vorangetrieben, die ein frühes ELT-Tool zur Produktionsreife brachten.",
+j1d:"Apr 2023 – heute",j1a:"Leitung eines Datenplattform-Projekts für einen führenden Telekommunikationsanbieter in Singapur: Migration von 35+ IBM-Quellsystemen zu Snowflake auf AWS.",
+j1b:"250+ Full-, Incremental- und Dedupe-Pipelines aus Dateien (JSON, XML, CSV, XLS), APIs (Salesforce, Adobe) und Datenbanken (Oracle, MySQL, PostgreSQL, SQL Server) gebaut.",
+j1c:"Monitoring-Dashboards für Ingestion-Objekte, Snowflake-Tasks und die Datenbewegung von Raw zu Modelled per Stored Procedures und UDFs entworfen.",
+j1d2:"Den Airbyte-basierten ETL/ELT-Tool „Data Pipes“ durch tägliche Meldung von Fehlern und Funktionslücken weiterentwickelt, mit 120+ Verbesserungen.",
+j2a:"Workloads eines südafrikanischen Telekommunikationsanbieters von On-Prem zu AWS migriert, Infrastruktur mit Glue und EC2 aufgebaut. ADF-Pipelines zur Orchestrierung erstellt.",
+j2b:"Alarmierung mit Azure Logic Apps, Functions und App Insights für einen Transportkunden umgesetzt und komplexe Stored Procedures entworfen.",
+j3a:"REST-APIs und Azure-Data-Factory-Pipelines entworfen, funktionale und nicht-funktionale Tests durchgeführt und kundenreife Dokumentation geliefert.",
+j4a:"SQL geschrieben und PostgreSQL-Datenbanken für Proofs of Concept betreut, erste Erfahrungen mit AWS, Azure und GCP.",
+p1t:"Migration von IBM zu Snowflake",p1:"35+ Quellsysteme für einen Telekommunikationsanbieter in Singapur auf eine Snowflake-Plattform auf AWS migriert, mit monatlichen Performance-Tests.",
+p2t:"ELT-Tool Data Pipes",p2:"120+ Features und Fixes für ein Airbyte-basiertes Tool vorangetrieben und so einen frühen Prototyp in eine skalierbare Produktionslösung verwandelt.",
+p3t:"Cloud-Migration von On-Prem zu AWS",p3:"Dateninfrastruktur für einen südafrikanischen Telekommunikationsanbieter mit Glue und EC2 auf AWS neu aufgebaut.",
+p4t:"Azure-Alarmierungssystem",p4:"Alarme für einen Transportkunden mit Logic Apps, Functions und Application Insights automatisiert.",
+t1:"Datenbanken & Warehousing",t2:"ETL / ELT & Orchestrierung",t3:"Cloud & Serverless",t4:"Sprachen & KI",t5:"BI & Reporting",t6:"DevOps, Testing & Delivery",
+edu:"Ausbildung",edu_t:"B.E. Maschinenbau, Savitribai Phule Pune University. CGPA 8,37/10, mit Auszeichnung (2016–2020).",
+aw:"Auszeichnungen",aw_t:"Rising Star of the Year 2021 und mehrfach Star of the Month bei UXLI Limited.",
+lg:"Sprachen",lg_t:"Englisch (verhandlungssicher), Hindi und Marathi (Muttersprache), Deutsch und Französisch (Grundkenntnisse).",
+ct:"Offen für Data-&-AI-Engineering-Rollen und spannende Datenprobleme. Sprechen wir."},
+fr:{n_clients:"Clients & secteurs",n_pp:"Projets personnels",cta3:"Télécharger mon CV",open:"ouvert aux postes Data & IA",cy1:"Afrique du Sud",cy2:"Singapour",d_tel:"Télécom",d_tr:"Transport",c1:"Migration du on-prem vers AWS avec Glue et EC2, plus orchestration ADF.",c2:"Plateforme de données d'IBM vers Snowflake : 250+ pipelines depuis 35+ systèmes sources.",c3:"Alertes avec Logic Apps, Functions et App Insights.",pt:"Titre de votre projet",pd:"Deux lignes sur le problème, la solution et le résultat.",pl:"Voir sur GitHub",vf:"Vérifier la certification",f_n:"Votre nom",f_e:"Votre e-mail",f_m:"Message",f_s:"Envoyer",f_ok:"Merci ! Votre message est envoyé.",n_about:"À propos",n_why:"Pourquoi moi",n_exp:"Expérience",n_proj:"Projets",n_tech:"Outils & technologies",n_cert:"Certifications",n_contact:"Contact",
+hi:"Bonjour, je suis",role:"Ingénieur Data & IA",tag:"Je conçois des plateformes de données cloud sur Snowflake, AWS et Azure qui transforment les données brutes en informations fiables, et j'étends ce socle vers l'IA générative.",
+cta1:"Me contacter",cta2:"Voir mes travaux",s1:"ans d'expérience",s2:"pipelines d'ingestion créés",s3:"systèmes sources migrés",s4:"fonctionnalités produit initiées",
+about:"Je suis un ingénieur Data & IA cloud-native avec plus de 5,5 ans d'expérience concrète dans la conception et la livraison de plateformes de données évolutives sur AWS, Azure et Snowflake. Mon travail couvre les migrations cloud, les frameworks d'ingestion, la conception ETL/ELT et l'orchestration de pipelines. La performance, l'observabilité et la qualité des modèles de données comptent pour moi, et je m'appuie dessus pour aller vers l'IA générative (certifié OCI Generative AI).",
+w1t:"Éprouvé à grande échelle",w1:"250+ pipelines d'ingestion livrés et 35+ systèmes sources migrés d'IBM vers Snowflake pour un grand opérateur télécom à Singapour.",
+w2t:"Maîtrise multi-cloud",w2:"Expérience en production sur AWS, Azure et Snowflake, de Glue et Lambda à Data Factory et Logic Apps.",
+w3t:"Axé sur la performance",w3:"Tests de performance mensuels sur l'ingestion, l'infrastructure AWS et Snowflake, avec 95 % d'efficacité.",
+w4t:"Esprit produit",w4:"Collaboration avec l'équipe produit d'un outil pour porter 120+ fonctionnalités qui ont amené un outil ELT naissant au niveau production.",
+j1d:"Avr. 2023 – aujourd'hui",j1a:"Pilotage d'un projet de plateforme de données pour un grand opérateur télécom à Singapour : migration de 35+ systèmes sources IBM vers Snowflake sur AWS.",
+j1b:"Création de 250+ pipelines d'ingestion (complets, incrémentaux, dédoublonnage) depuis des fichiers (JSON, XML, CSV, XLS), des API (Salesforce, Adobe) et des bases (Oracle, MySQL, PostgreSQL, SQL Server).",
+j1c:"Conception de tableaux de bord de suivi pour les objets d'ingestion, les tâches Snowflake et les flux de la couche brute vers la couche modélisée via procédures stockées et UDF.",
+j1d2:"Contribution à la maturité de « Data Pipes », un outil ETL/ELT basé sur Airbyte, en remontant chaque jour bugs et manques, avec 120+ améliorations à la clé.",
+j2a:"Migration des charges d'un opérateur télécom sud-africain du on-prem vers AWS, avec Glue et EC2. Pipelines ADF pour l'orchestration.",
+j2b:"Mise en place d'alertes avec Azure Logic Apps, Functions et App Insights pour un client du transport, et conception de procédures stockées complexes.",
+j3a:"Conception d'API REST et de pipelines Azure Data Factory, tests fonctionnels et non fonctionnels, documentation prête pour le client.",
+j4a:"Requêtes SQL et gestion de bases PostgreSQL pour des preuves de concept, premiers pas avec AWS, Azure et GCP.",
+p1t:"Migration d'IBM vers Snowflake",p1:"Migration de 35+ systèmes sources d'un opérateur télécom singapourien vers une plateforme Snowflake sur AWS, avec tests de performance mensuels.",
+p2t:"Outil ELT Data Pipes",p2:"120+ fonctionnalités et correctifs sur un outil basé sur Airbyte, faisant d'un prototype une solution de production évolutive.",
+p3t:"Migration cloud on-prem vers AWS",p3:"Reconstruction de l'infrastructure de données d'un opérateur télécom sud-africain sur AWS avec Glue et EC2.",
+p4t:"Système d'alertes Azure",p4:"Automatisation des alertes d'un client du transport avec Logic Apps, Functions et Application Insights.",
+t1:"Bases de données & entrepôts",t2:"ETL / ELT & orchestration",t3:"Cloud & serverless",t4:"Langages & IA",t5:"BI & reporting",t6:"DevOps, tests & livraison",
+edu:"Formation",edu_t:"B.E. Génie mécanique, Savitribai Phule Pune University. CGPA 8,37/10, mention très bien (2016–2020).",
+aw:"Distinctions",aw_t:"Rising Star of the Year 2021 et plusieurs Star of the Month chez UXLI Limited.",
+lg:"Langues",lg_t:"Anglais (professionnel), hindi et marathi (langues maternelles), allemand et français (élémentaire).",
+ct:"Ouvert aux postes d'ingénieur Data & IA et aux beaux défis de données. Discutons-en."}};
+const $=s=>document.querySelector(s),root=document.documentElement;
+const get=k=>{try{return localStorage.getItem(k)}catch(e){return null}},set=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+function setLang(l){if(!T[l])l='en';root.lang=l;$('#lang').value=l;set('lang',l);
+ document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);
+ document.querySelectorAll('[data-ph]').forEach(e=>e.placeholder=T[l][e.dataset.ph]);
+ document.title='Tejas Patil · '+T[l].role}
+function setTheme(t){root.dataset.theme=t;$('#theme').textContent=t=='dark'?'☀️':'🌙';set('theme',t)}
+$('#lang').onchange=e=>setLang(e.target.value);
+$('#theme').onclick=()=>setTheme(root.dataset.theme=='dark'?'light':'dark');
+setTheme(get('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+setLang(get('lang')||(navigator.language||'en').slice(0,2));
+$('#fm').onsubmit=async e=>{const f=e.target;
+ if(f.action.includes('YOUR_FORM_ID')){e.preventDefault();location.href='mailto:tejaspatil53@gmail.com?subject='+encodeURIComponent('Portfolio: '+f.name.value)+'&body='+encodeURIComponent(f.message.value+'\n\n'+f.name.value+' <'+f.email.value+'>');return}
+ e.preventDefault();try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){f.reset();$('#fs').textContent=T[root.lang].f_ok}}catch(x){}};
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
