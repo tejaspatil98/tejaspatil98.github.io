@@ -1,347 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tejas Patil · Data & AI Engineer</title>
-<meta name="description" content="Portfolio of Tejas Patil, Data & AI Engineer with 5.5+ years across Snowflake, AWS and Azure.">
+<title>Tejas Patil · AI Data Engineer</title>
+<!-- Fonts: Inter = body (iOS-like). Caveat = hand-drawn stand-in for Excalifont.
+     To use real Excalifont: download it from the Excalidraw repo, add @font-face and set --hand below. -->
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Space+Grotesk:wght@600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=DM+Sans:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ============ BACKGROUND PALETTES ============
- To try one: copy its values over --bg, --a, --b, --c in BOTH the light block (:root) and the dark block (:root[data-theme=dark]) below.
- --bg = page colour, --a/--b/--c = the three glowing blobs behind the glass (also used for accents).
- SUNSET   light: #fff4ec #ff6b3d #ffb703 #e11d74 | dark: #170a10 #ff7a50 #ffc233 #f43f8e
- EMERALD  light: #edf7f1 #10a36b #2bb5c9 #7c9c2a | dark: #06130e #34d399 #22d3ee #a3e635
- ORCHID   light: #f7f0fb #a855f7 #ec4899 #6366f1 | dark: #0e0a1a #c084fc #f472b6 #818cf8
- GOLD     light: #f3f1ec #b8862b #6b7280 #0f766e | dark: #0b0b0d #e0b355 #94a3b8 #2dd4bf
- OCEAN (current default) light: #eef3fb #2f6bff #12b5a6 #8b5cf6 | dark: #070d1c #5b8cff #2dd4bf #a78bfa
- ============================================= */
-:root{--bg:#f3f1ec;--tx:#12203a;--mu:#51617f;--gl:rgba(255,255,255,.55);--bd:rgba(255,255,255,.75);--sh:0 8px 32px rgba(40,70,140,.14);--a:#b8862b;--b:#6b7280;--c:#0f766e}
-:root[data-theme=dark]{--bg:#0b0b0d;--tx:#e8eefc;--mu:#9aa9c7;--gl:rgba(255,255,255,.06);--bd:rgba(255,255,255,.14);--sh:0 8px 32px rgba(0,0,0,.45);--a:#e0b355;--b:#94a3b8;--c:#2dd4bf}
-*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font:16px/1.65 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;transition:background .3s}
-h1,h2,h3{font-family:Sora,system-ui,sans-serif;line-height:1.2}
-.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
-.bg i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55}
-.bg i:nth-child(1){width:46vw;height:46vw;background:var(--a);top:-12vw;left:-8vw}
-.bg i:nth-child(2){width:38vw;height:38vw;background:var(--b);top:30vh;right:-10vw;opacity:.4}
-.bg i:nth-child(3){width:34vw;height:34vw;background:var(--c);bottom:-12vw;left:20vw;opacity:.4}
-.glass{background:var(--gl);border:1px solid var(--bd);box-shadow:var(--sh);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-radius:22px}
-a{color:inherit}
-nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:min(1080px,94%);z-index:9;display:flex;align-items:center;gap:14px;padding:8px 14px;border-radius:999px}
-nav b{font-family:Sora;margin-right:auto}
-nav .l{display:flex;gap:4px}
-nav .l a{text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px;color:var(--mu)}
-nav .l a:hover{color:var(--tx);background:var(--gl)}
-.ctl{display:flex;gap:8px}
-.ctl button,.ctl select{font:inherit;font-size:14px;color:var(--tx);background:var(--gl);border:1px solid var(--bd);border-radius:999px;padding:5px 12px;cursor:pointer}
-.ctl select option{color:#12203a}
-:focus-visible{outline:2px solid var(--a);outline-offset:2px}
-main{width:min(1080px,92%);margin:0 auto}
-section{padding:72px 0 8px}
-h2{font-size:clamp(26px,3.4vw,36px);margin-bottom:24px}
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;min-height:100vh;padding-top:110px}
-.hero h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.02em}
-.hero h1 span{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
-.role{font-family:Sora;font-size:clamp(17px,2.2vw,22px);margin:14px 0;color:var(--mu)}
-.hero p.s{max-width:56ch;color:var(--mu)}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{text-decoration:none;padding:11px 22px;border-radius:999px;font-weight:500;border:1px solid var(--bd);background:var(--gl)}
-.btn.p{background:linear-gradient(90deg,var(--a),var(--c));color:#fff;border:0}
-.pf{padding:14px;text-align:center}
-.av{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b),var(--c));display:grid;place-items:center;font:700 72px Sora;color:#fff}
-.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pipe{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:14px;font-size:13px;color:var(--mu)}
-.pipe em{font-style:normal;padding:4px 9px;border-radius:999px;border:1px solid var(--bd);background:var(--gl)}
-.pipe s{flex:1;height:2px;background:linear-gradient(90deg,var(--a),var(--b));background-size:200% 100%;animation:flow 2.4s linear infinite}
-@keyframes flow{to{background-position:-200% 0}}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
-.stat{padding:16px}.stat b{display:block;font:700 26px Sora}.stat span{font-size:13px;color:var(--mu)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{padding:22px}.card h3{font-size:18px;margin-bottom:8px}.card p,.card li{color:var(--mu);font-size:15px}
-.tl{position:relative;padding-left:26px;border-left:2px solid var(--bd);display:grid;gap:18px}
-.job{padding:22px;position:relative}
-.job:before{content:"";position:absolute;left:-36px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--b);box-shadow:0 0 0 4px var(--bg)}
-.job h3{font-size:18px}.job .m{color:var(--a);font-size:14px;margin:2px 0 10px}
-.job ul{padding-left:18px;display:grid;gap:6px;color:var(--mu);font-size:15px}
-.proj{display:flex;flex-direction:column;gap:10px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.tags span,.chips span{font-size:13px;padding:3px 11px;border-radius:999px;border:1px solid var(--bd);background:var(--gl)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.card h3 small{display:block;font:500 13px 'DM Sans';color:var(--mu)}
-.cert{display:flex;gap:12px;align-items:center;padding:16px 18px}.cert i{font-style:normal;font-size:24px}
-.cert b{display:block;font-weight:500;font-size:15px;line-height:1.35}.cert span{font-size:13px;color:var(--mu)}
-.ct{text-align:center;padding:44px 24px}.ct p{color:var(--mu);margin-bottom:22px}
-footer{text-align:center;color:var(--mu);font-size:14px;padding:44px 0 30px}
-nav .l a{font-size:13px;padding:6px 8px}
-.code{overflow:hidden;font:13.5px/1.7 'JetBrains Mono',ui-monospace,monospace;margin-top:26px;max-width:560px}
-.code .bar{display:flex;gap:6px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--bd);color:var(--mu);font-size:12px}
-.code .bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.code .bar i:nth-child(2){background:#febc2e}.code .bar i:nth-child(3){background:#28c840}.code .bar span{margin-left:8px}
-.code pre{padding:12px 0;counter-reset:l;overflow-x:auto;white-space:normal;font:inherit}
-.code pre div{display:flex;gap:16px;padding:0 16px;counter-increment:l}
-.code pre div:before{content:counter(l);width:1.4em;text-align:right;color:var(--mu);opacity:.6;flex:none}
-.code pre div>span{min-width:0}.code b{font-weight:400}.code .k{color:var(--c)}.code .s{color:var(--b)}.code .n{color:var(--a)}.code .m{color:var(--mu)}.code .w{display:inline-block;width:1.6em}
-.logo{width:54px;height:54px;border-radius:14px;background:#fff;display:grid;place-items:center;position:relative;font:700 20px Sora;color:#12203a;overflow:hidden;flex:none}
-.logo img{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);object-fit:contain}
-.cl{text-decoration:none;display:flex;flex-direction:column;gap:10px}.cl .h{display:flex;gap:14px;align-items:center}.cl h3{font-size:17px;margin:0}.cl small{color:var(--mu)}
-.dm{align-self:flex-start;font-size:13px;padding:3px 11px;border-radius:999px;background:linear-gradient(90deg,var(--a),var(--c));color:#fff}
-.cc{display:block;text-decoration:none;overflow:hidden}.ci{aspect-ratio:16/10;background:rgba(255,255,255,.6);display:grid;place-items:center;font-size:42px;position:relative}
-.ci img{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:contain}
-.cc .t{padding:12px 16px}.cc b{display:block;font-weight:500;font-size:15px;line-height:1.35}.cc span{font-size:13px;color:var(--mu)}.cc em{display:block;font-style:normal;font-size:13px;color:var(--a);margin-top:6px}
-a.proj{text-decoration:none}.proj em{font-style:normal;color:var(--a);font-size:14px}
-.fm{display:grid;gap:12px;max-width:560px;margin:0 auto 20px;text-align:left}
-.fm input,.fm textarea{font:inherit;color:var(--tx);background:var(--gl);border:1px solid var(--bd);border-radius:14px;padding:11px 14px;width:100%}
-.fm button{cursor:pointer;font:inherit}
-@media(max-width:1000px){nav .l{display:none}}
-@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:0}.pf{max-width:300px;justify-self:center;order:-1}.stats{grid-template-columns:repeat(2,1fr)}nav .l{display:none}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+/* ===== 1. THEME COLORS — edit here to restyle everything ===== */
+:root{
+  /* ACTIVE light colours */
+  --bg1:#ffffff; --bg2:#fbe9f3; --bg3:#f8fafc;
+  --text:#1c1c1e; --muted:#5b5b63;
+  --glass:rgba(255,255,255,.75); --glass-hi:rgba(255,255,255,.92); --sheen:.9;
+  --edge:rgba(255,255,255,.8); --shadow:0 10px 36px rgba(30,70,140,.16);
+  --accent:#0a84ff; --accent2:#8e6bf2; --pt:#5b34c9;   /* accent2 and pt = purple used on peers' names */
+  --code:'JetBrains Mono','Fira Code','Cascadia Code',ui-monospace,Menlo,Consolas,monospace; /* previous code font: ui-monospace,Menlo,Consolas,monospace */
+  --hand:'Caveat','Segoe Print',cursive; --body:'Inter',-apple-system,'SF Pro Text',system-ui,sans-serif;
+  /* TRY (liquid-glass blue light): replace the values above with
+     --bg1:#dbe7f8; --bg2:#fbe9f3; --bg3:#d9eefa; --text:#0f172a; --muted:#4f5d78; --glass:rgba(255,255,255,.34);
+     NOTE: never put a comment inside a comment, it breaks the CSS that follows. */
+}
+[data-theme="dark"]{
+  --bg1:#000000; --bg2:#06091a; --bg3:#000000;
+  --text:#ffffff; --muted:#a1a1a6;
+  --glass:rgba(255,255,255,.07); --glass-hi:rgba(255,255,255,.16); --sheen:.55;
+  --edge:rgba(255,255,255,.26); --shadow:0 12px 40px rgba(0,0,0,.8);
+  --accent:#4da3ff; --accent2:#bf5af2; --pt:#e3ccff;
+}
+/* ===== TRY: PURE-BLACK visionOS / iOS crystal dark mode =====
+   To use: (1) replace the values inside [data-theme="dark"] above with the block below,
+           (2) copy the extra rules at the bottom of this comment OUTSIDE the comment (just under it).
+[data-theme="dark"]{
+  --bg1:#000000; --bg2:#06091a; --bg3:#000000;
+  --text:#ffffff; --muted:#a1a1a6;
+  --glass:rgba(255,255,255,.07); --glass-hi:rgba(255,255,255,.16); --sheen:.55;
+  --edge:rgba(255,255,255,.26); --shadow:0 12px 40px rgba(0,0,0,.8);
+  --accent:#4da3ff; --accent2:#bf5af2; --pt:#e3ccff;
+}
+Extra rules:
+[data-theme="dark"] .glass{backdrop-filter:blur(34px) saturate(210%) brightness(1.2);-webkit-backdrop-filter:blur(34px) saturate(210%) brightness(1.2)}
+[data-theme="dark"] .tag{background:rgba(77,163,255,.2);border-color:rgba(120,190,255,.55);color:#9fd0ff}
+[data-theme="dark"] .hl{background:rgba(191,90,242,.2);border-color:rgba(210,150,255,.55)}
+[data-theme="dark"] .avatar::before{background:conic-gradient(rgba(77,163,255,1),rgba(255,255,255,.18),rgba(160,215,255,.95),rgba(255,255,255,.12),rgba(77,163,255,1));filter:drop-shadow(0 0 16px rgba(77,163,255,.75))}
+[data-theme="dark"] .avatar::after{border-color:rgba(255,255,255,.4)}
+===== end of pure-black block ===== */
+[data-theme="dark"] .glass{backdrop-filter:blur(34px) saturate(210%) brightness(1.2);-webkit-backdrop-filter:blur(34px) saturate(210%) brightness(1.2)}
+[data-theme="dark"] .tag{background:rgba(77,163,255,.2);border-color:rgba(120,190,255,.55);color:#9fd0ff}
+[data-theme="dark"] .hl{background:rgba(191,90,242,.2);border-color:rgba(210,150,255,.55)}
+[data-theme="dark"] .avatar::before{background:conic-gradient(rgba(77,163,255,1),rgba(255,255,255,.18),rgba(160,215,255,.95),rgba(255,255,255,.12),rgba(77,163,255,1));filter:drop-shadow(0 0 16px rgba(77,163,255,.75))}
+[data-theme="dark"] .avatar::after{border-color:rgba(255,255,255,.4)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--body);color:var(--text);line-height:1.6;min-height:100vh;
+  background:radial-gradient(60vw 60vw at 10% 0%,var(--bg1),transparent 60%),
+            radial-gradient(50vw 50vw at 100% 30%,var(--bg2),transparent 60%),
+            radial-gradient(60vw 60vw at 30% 100%,var(--bg3),transparent 60%),var(--bg1);
+  background-attachment:fixed;transition:background .4s,color .4s}
+/* ===== 2. GLASS LOOK — reused by every card ===== */
+.glass{position:relative;background:linear-gradient(135deg,var(--glass-hi),var(--glass));
+  backdrop-filter:blur(28px) saturate(190%);-webkit-backdrop-filter:blur(28px) saturate(190%);
+  border:1px solid var(--edge);border-radius:26px;box-shadow:var(--shadow),inset 0 1px 1px var(--edge),inset 0 -1px 1px rgba(255,255,255,.1)}
+/* reflective top-left sheen = Apple's layered glass */
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:var(--sheen);
+  background:linear-gradient(155deg,rgba(255,255,255,.6),transparent 35%,transparent 72%,rgba(110,180,255,.22))}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+section{padding:70px 0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:26px;letter-spacing:-.02em}
+.hand{font-family:var(--hand)}
+.muted{color:var(--muted)} .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{padding:22px;position:relative;transition:transform .3s}.card:hover{transform:translateY(-4px)}
+.tag{display:inline-block;font-size:.75rem;padding:3px 12px;margin:6px 6px 0 0;border-radius:99px;font-weight:600;color:var(--accent);
+  background:rgba(10,132,255,.13);border:1px solid rgba(10,132,255,.32);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:99px;border:1px solid var(--edge);background:var(--glass);color:var(--text);text-decoration:none;cursor:pointer;font:inherit;font-weight:600}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:0}
+.corner{position:absolute;top:16px;right:16px;text-decoration:none;font-size:1.2rem;color:var(--text)}
+/* ===== Extras: strips, timeline, carousel, icons ===== */
+.btn{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.strip{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(var(--w,165px),1fr))}
+.cell{padding:24px 22px;font-size:.9rem;min-width:0;overflow-wrap:anywhere}.cell h3{font-size:1rem;margin:6px 0}
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--accent),rgba(10,132,255,.12))}
+.tl .glass{margin-bottom:18px;padding:18px 22px}
+.tl .glass::after{content:"";position:absolute;left:-31px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(10,132,255,.2),0 0 14px var(--accent)}
+.cwin{overflow:hidden;padding:8px 0 16px}
+.ctrack{display:flex;gap:18px;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.ctrack .card{flex:0 0 calc((100% - 18px*(var(--pv) - 1))/var(--pv))}
+.cdots{display:flex;justify-content:center;align-items:center;gap:10px}
+.cdots i{width:9px;height:9px;border-radius:50%;background:var(--edge);border:1px solid rgba(10,132,255,.45);cursor:pointer;transition:.3s}
+.cdots i.on{width:26px;border-radius:99px;background:var(--accent)}
+.ico{width:34px;height:34px;object-fit:contain;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+.btn .ico{width:18px;height:18px}.primary .ico{filter:brightness(0) invert(1)}
+[data-theme="dark"] .inv{filter:invert(1)}
+.tool{width:104px;padding:14px 8px;text-align:center;border-radius:22px;font-size:.8rem;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cat{margin:26px 0 6px;font-size:1.05rem}
+.hl{background:rgba(142,107,242,.16);border:1px solid rgba(142,107,242,.42);color:var(--pt);backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+
+/* ===== SLIDERS (why / clients / projects / leadership = horizontal with peek, certificates = vertical) ===== */
+.sl{--gap:18px;--peek:44px;--cw:calc((100% - var(--peek) - var(--gap)*var(--pv))/var(--pv))}
+.sl.single{--cw:calc((100% - var(--gap)*(var(--pv) - 1))/var(--pv))}
+.sl.h .slwin{overflow:hidden;padding:8px 0 16px}
+.sl.h .sltrack{display:flex;gap:var(--gap);transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.sl.h .slitem{flex:0 0 var(--cw)}
+.slitem{min-width:0}.slitem>.card,.slitem>.cell{height:100%}
+.sl.h .sldots{margin-top:2px}
+.sl.v{display:flex;gap:14px;align-items:stretch}
+.sl.v .slwin{flex:1;min-width:0;overflow:hidden;height:calc(var(--h,300px) + 16px);padding:8px 4px}
+.sl.v .sltrack{position:relative;display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:var(--gap);transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.sl.v .sldots{flex-direction:column;justify-content:center}
+.sl.v .sldots i.on{width:9px;height:26px}.sl.v .slnext{transform:rotate(90deg)}
+.sl.single .sldots{display:none}
+@media(max-width:640px){.sl{--peek:34px}}
+/* ===== code editor look for recruiter draft (always dark, like VS Code) ===== */
+.editor{background:#1e1e1e;border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;margin:12px 0;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.edbar{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#2d2d2d;color:#9d9d9d;font:.75rem var(--code)}
+.edbar em{width:11px;height:11px;border-radius:50%;background:#ff5f56}.edbar em+em{background:#ffbd2e}.edbar em+em+em{background:#27c93f}.edbar span{margin-left:8px}
+.editor pre{margin:0;padding:12px 14px;font:.86rem/1.75 var(--code);font-variant-ligatures:contextual;color:#d4d4d4;overflow-x:auto;white-space:pre;tab-size:2}
+.editor i{font-style:normal}.editor .k{color:#9cdcfe}.editor .s{color:#ce9178}.editor .c{color:#6a9955}
+.editor .ln{display:inline-block;width:2.2em;color:#5a5a5a;user-select:none}
+/*pre.code.hand{font:1.35rem/1.5 var(--hand)}*/
+pre.code{padding:18px;font:.82rem/1.6 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;margin-top:18px}
+.k{color:var(--accent2)}.s{color:var(--accent)}
+/* ===== 3. HEADER ===== */
+header.glass{position:sticky;top:10px;z-index:50;margin:10px auto;max-width:1160px;padding:8px 18px;display:flex;align-items:center;gap:14px;border-radius:99px}
+.brand{cursor:pointer;line-height:1;text-decoration:none;color:var(--text)}
+.brand b{font-size:1.25rem}
+.sig{display:block;width:90px;height:16px}
+.sig path{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:200;stroke-dashoffset:200}
+.sig.go path{animation:draw 1.6s ease forwards}.sig.go path+path{animation-delay:.5s}
+@keyframes draw{to{stroke-dashoffset:0}}
+nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav a{padding:7px 12px;border-radius:99px;text-decoration:none;color:var(--text);font-size:.9rem;white-space:nowrap}
+nav a:hover{background:var(--glass)}
+.mini{width:38px;height:38px;border-radius:50%;padding:0;justify-content:center}
+select.btn{padding:8px 10px}
+/* ===== 4. HERO ===== */
+.hero{display:grid;gap:36px;grid-template-columns:1.3fr 1fr;align-items:center;padding-top:110px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:-.03em;line-height:1.1}
+.quote{font-size:1.9rem;margin:14px 0}
+pre.code{padding:18px;font:.82rem/1.6 var(--code);/* previous: font:.82rem/1.6 ui-monospace,Menlo,Consolas,monospace; */overflow-x:auto;margin-top:18px}
+.k{color:var(--accent2)}.s{color:var(--accent)}
+.avatar{position:relative;width:min(290px,calc(100vw - 150px));aspect-ratio:1;margin:44px auto 0}.hero>div{min-width:0}
+.avatar::before{content:"";position:absolute;inset:-20px;border-radius:50%;
+  /* ===== RING GUIDE (all optional, edit the lines below) =====
+     COLOURS: change the 5 colours inside conic-gradient(...). Keep the first and last colour the same so the loop is seamless.
+     iOS system colours: Blue #0A84FF | Indigo #5E5CE6 | Purple #BF5AF2 | Pink #FF375F | Red #FF453A
+                         Orange #FF9F0A | Yellow #FFD60A | Green #30D158 | Mint #63E6E2 | Teal #40C8E0 | Cyan #64D2FF
+     READY PALETTES (replace the whole conic-gradient line):
+       Aurora : conic-gradient(#5E5CE6,#BF5AF2,#FF375F,#BF5AF2,#5E5CE6)
+       Ocean  : conic-gradient(#0A84FF,#64D2FF,#63E6E2,#64D2FF,#0A84FF)
+       Sunset : conic-gradient(#FF9F0A,#FF375F,#BF5AF2,#FF375F,#FF9F0A)
+       Spectrum (full iOS rainbow): conic-gradient(#FF453A,#FF9F0A,#FFD60A,#30D158,#64D2FF,#0A84FF,#BF5AF2,#FF453A)
+     SPEED: change "14s" in the animation below (smaller = faster, e.g. 6s). The dotted ring has its own "30s" further down.
+     DIRECTION: add the word "reverse" after "linear" to spin the other way. PAUSE: replace "infinite" by "0" and remove the animation.
+     THICKNESS: in the mask, change 66% / 67% (lower numbers = thicker ring). GLOW: edit the drop-shadow colour. */
+  background:conic-gradient(rgba(100,100,255,.95), rgba(180,120,255,.3), rgba(220,200,255,.9), rgba(90,150,255,.3), rgba(100,100,255,.95));
+  -webkit-mask:radial-gradient(circle,transparent 66%,#000 67%);mask:radial-gradient(circle,transparent 66%,#000 67%);
+  filter:drop-shadow(0 0 14px rgba(120,110,255,.6));animation:spin 14s linear infinite}
+.avatar::after{content:"";position:absolute;inset:-34px;border-radius:50%;border:4px dotted rgba(140,130,255,.55);animation:spin 30s linear infinite reverse}
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--glass)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avail{display:flex;align-items:center;gap:8px;justify-content:center;padding:6px 16px;border-radius:99px;width:fit-content;margin:64px auto 0}.avail b{font-size:.85rem}
+.sw{width:40px;height:22px;border-radius:99px;background:#34c759;position:relative;cursor:pointer;border:0}
+.sw::after{content:"";position:absolute;top:2px;left:20px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.3s}
+.sw.off{background:#999}.sw.off::after{left:2px}
+/* ===== 5. MARQUEES (left→right and right→left) ===== */
+.marq{overflow:hidden;margin:10px 0}
+.track{display:flex;gap:14px;width:max-content;animation:mq 40s linear infinite}
+.marq.rev .track{animation-direction:reverse}.marq:hover .track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.static-row{display:flex;justify-content:center;align-items:center;gap:14px;margin:10px 0;flex-wrap:wrap}
+.ico{width:32px;height:32px;object-fit:contain;vertical-align:middle}
+b.ico{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700}
+.ico.emo{background:none;font-size:26px;color:inherit}
+.ico.badge{border-radius:9px;font-size:11px}
+svg.ico{display:inline-block;background:none}
+.btn .emo{font-size:15px}
+.cname{display:flex;align-items:center;gap:10px;margin-bottom:2px}.clogo{width:34px;height:34px;object-fit:contain;border-radius:8px}
+.pill{padding:10px 18px;border-radius:99px;white-space:nowrap;font-weight:600}
+.client{min-width:250px;padding:16px}
+.q{font-size:3rem;line-height:.6;color:var(--accent)}
+.mail{font-size:.8rem;color:var(--muted)}
+.hl{display:inline-block;margin-top:8px;padding:2px 10px;border-radius:8px;background:color-mix(in srgb,var(--accent2) 20%,transparent);font-weight:700}
+details{margin-top:10px}summary{cursor:pointer;font-weight:600}
+footer{text-align:center;padding:40px 20px;color:var(--muted)}
+@media(max-width:800px){.hero{grid-template-columns:1fr}header{border-radius:24px;flex-wrap:wrap}.brand{margin-right:auto}nav{order:5;width:100%;margin:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
-<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
 
-<nav class="glass">
-  <b>TP</b>
-  <div class="l">
-    <a href="#about" data-i="n_about"></a><a href="#clients" data-i="n_clients"></a><a href="#exp" data-i="n_exp"></a><a href="#proj" data-i="n_proj"></a><a href="#tech" data-i="n_tech"></a><a href="#cert" data-i="n_cert"></a><a href="#contact" data-i="n_contact"></a>
-  </div>
-  <div class="ctl">
-    <select id="lang" aria-label="Language"><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option></select>
-    <button id="theme" aria-label="Toggle dark mode">🌙</button>
-  </div>
-</nav>
+<header class="glass">
+  <!-- Brand: click = scroll to top + replay signature animation -->
+  <a class="brand" href="#home" id="brand"><b class="hand" style="font-size:1.6rem">TejasPatil</b>
+    <svg class="sig go" viewBox="0 0 90 16"><path d="M2 10 C 15 0, 25 16, 40 8 S 70 2, 88 9"/><path d="M10 14 C 30 11, 55 15, 80 12"/></svg></a>
+  <nav id="nav"></nav>
+  <button class="btn mini" id="theme" title="Dark / Light">🌙</button>
+  <select class="btn" id="lang"><option value="en">EN</option><option value="de">DE</option><option value="fr">FR</option></select>
+</header>
 
-<main>
-<section class="hero" id="top">
-  <div>
-    <p data-i="hi"></p>
-    <h1>Tejas <span>Patil</span></h1>
-    <div class="role" data-i="role"></div>
-    <p class="s" data-i="tag"></p>
-    <div class="btns">
-      <a class="btn p" href="#contact" data-i="cta1"></a>
-      <a class="btn" href="#proj" data-i="cta2"></a>
-      <!-- Put your PDF next to index.html and name it resume.pdf -->
-      <a class="btn" href="resume.pdf" download data-i="cta3"></a>
-      <a class="btn" href="https://www.linkedin.com/in/tejaspatil53" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="glass code"><div class="bar"><i></i><i></i><i></i><span>tejas.py</span></div><pre>
-<div><span><b class="k">engineer</b> = {</span></div>
-<div><span><i class="w"></i><b class="s">"name"</b>: <b class="s">"Tejas Patil"</b>,</span></div>
-<div><span><i class="w"></i><b class="s">"role"</b>: "<b class="s" data-i="role"></b>",</span></div>
-<div><span><i class="w"></i><b class="s">"stack"</b>: [<b class="s">"Snowflake"</b>, <b class="s">"AWS"</b>, <b class="s">"Azure"</b>, <b class="s">"Python"</b>, <b class="s">"SQL"</b>],</span></div>
-<div><span><i class="w"></i><b class="s">"years"</b>: <b class="n">5.5</b>,</span></div>
-<div><span><i class="w"></i><b class="s">"status"</b>: "<b class="s" data-i="open"></b>"</span></div>
-<div><span>}</span></div></pre></div>
-    <div class="stats">
-      <div class="glass stat"><b>5.5+</b><span data-i="s1"></span></div>
-      <div class="glass stat"><b>250+</b><span data-i="s2"></span></div>
-      <div class="glass stat"><b>35+</b><span data-i="s3"></span></div>
-      <div class="glass stat"><b>120+</b><span data-i="s4"></span></div>
-    </div>
-  </div>
-  <div class="glass pf">
-    <!-- Put your photo next to this file as profile.jpg; initials show until then -->
-    <div class="av">TP<img src="profile.jpg" alt="Tejas Patil" onerror="this.remove()"></div>
-    <div class="pipe"><em>Raw</em><s></s><em>Model</em><s></s><em>AI</em></div>
-  </div>
-</section>
-
-<section id="about"><h2 data-i="n_about"></h2>
-  <div class="glass code" style="max-width:none;margin:0"><div class="bar"><i></i><i></i><i></i><span>about_me.py</span></div><pre>
-<div><span><b class="k">class</b> <b class="n">Tejas</b>:</span></div>
-<div><span><i class="w"></i><b class="m">"""<span data-i="about"></span>"""</b></span></div>
-<div><span><i class="w"></i><b class="k">focus</b> = [<b class="s">"data platforms"</b>, <b class="s">"ELT"</b>, <b class="s">"cloud migration"</b>, <b class="s">"GenAI"</b>]</span></div></pre></div>
-</section>
-
-<section id="why"><h2 data-i="n_why"></h2>
-  <div class="grid">
-    <div class="glass card"><h3 data-i="w1t"></h3><p data-i="w1"></p></div>
-    <div class="glass card"><h3 data-i="w2t"></h3><p data-i="w2"></p></div>
-    <div class="glass card"><h3 data-i="w3t"></h3><p data-i="w3"></p></div>
-    <div class="glass card"><h3 data-i="w4t"></h3><p data-i="w4"></p></div>
-  </div>
-</section>
-
-<section id="exp"><h2 data-i="n_exp"></h2>
-  <div class="tl">
-    <div class="glass job"><h3>UXLI Limited · Data Engineer</h3><div class="m" data-i="j1d"></div>
-      <ul><li data-i="j1a"></li><li data-i="j1b"></li><li data-i="j1c"></li><li data-i="j1d2"></li></ul></div>
-    <div class="glass job"><h3>UXLI Limited · Application Developer & Data Engineer</h3><div class="m">Jan 2022 – Mar 2023</div>
-      <ul><li data-i="j2a"></li><li data-i="j2b"></li></ul></div>
-    <div class="glass job"><h3>UXLI Limited · Engineer Trainee</h3><div class="m">Jan 2021 – Dec 2021</div>
-      <ul><li data-i="j3a"></li></ul></div>
-    <div class="glass job"><h3>UXLI Limited · Intern</h3><div class="m">Oct 2020 – Dec 2020</div>
-      <ul><li data-i="j4a"></li></ul></div>
-  </div>
-</section>
-
-<section id="clients"><h2 data-i="n_clients"></h2>
-  <!-- Logos: save as assets/logos/vodacom.png, starhub.png, transport.png. Until they exist, a letter is shown. Confirm your client is OK with being named. -->
-  <div class="grid">
-    <a class="glass card cl" href="https://www.vodacom.co.za" target="_blank" rel="noopener"><div class="h"><div class="logo">V<img src="assets/logos/vodacom.png" alt="Vodacom" onerror="this.remove()"></div><div><h3>Vodacom</h3><small data-i="cy1"></small></div></div><span class="dm" data-i="d_tel"></span><p data-i="c1"></p></a>
-    <a class="glass card cl" href="https://www.starhub.com" target="_blank" rel="noopener"><div class="h"><div class="logo">S<img src="assets/logos/starhub.png" alt="StarHub" onerror="this.remove()"></div><div><h3>StarHub</h3><small data-i="cy2"></small></div></div><span class="dm" data-i="d_tel"></span><p data-i="c2"></p></a>
-    <!-- Add the transportation client's name, site and logo here -->
-    <div class="glass card cl"><div class="h"><div class="logo">T<img src="assets/logos/transport.png" alt="" onerror="this.remove()"></div><div><h3 data-i="d_tr"></h3></div></div><span class="dm" data-i="d_tr"></span><p data-i="c3"></p></div>
-  </div>
-</section>
-
-<section id="proj"><h2 data-i="n_proj"></h2>
-  <div class="grid">
-    <div class="glass card proj"><h3 data-i="p1t"></h3><p data-i="p1"></p><div class="tags"><span>Snowflake</span><span>AWS</span><span>Python</span><span>SQL</span></div></div>
-    <div class="glass card proj"><h3 data-i="p2t"></h3><p data-i="p2"></p><div class="tags"><span>Airbyte</span><span>Python</span><span>APIs</span></div></div>
-    <div class="glass card proj"><h3 data-i="p3t"></h3><p data-i="p3"></p><div class="tags"><span>AWS Glue</span><span>EC2</span><span>S3</span></div></div>
-    <div class="glass card proj"><h3 data-i="p4t"></h3><p data-i="p4"></p><div class="tags"><span>Logic Apps</span><span>Functions</span><span>App Insights</span></div></div>
-  </div>
-</section>
-
-<section id="pp"><h2 data-i="n_pp"></h2>
-  <!-- Replace each href with your GitHub repo and the text with your own project (keys pt / pd in the T object apply to all three) -->
-  <div class="grid">
-    <a class="glass card proj" href="https://github.com/YOUR-USERNAME/PROJECT-1" target="_blank" rel="noopener"><h3 data-i="pt"></h3><p data-i="pd"></p><div class="tags"><span>Snowflake</span><span>Python</span></div><em data-i="pl"></em></a>
-    <a class="glass card proj" href="https://github.com/YOUR-USERNAME/PROJECT-2" target="_blank" rel="noopener"><h3 data-i="pt"></h3><p data-i="pd"></p><div class="tags"><span>GenAI</span><span>OCI</span></div><em data-i="pl"></em></a>
-    <a class="glass card proj" href="https://github.com/YOUR-USERNAME/PROJECT-3" target="_blank" rel="noopener"><h3 data-i="pt"></h3><p data-i="pd"></p><div class="tags"><span>AWS</span><span>SQL</span></div><em data-i="pl"></em></a>
-  </div>
-</section>
-
-<section id="tech"><h2 data-i="n_tech"></h2>
-  <div class="grid">
-    <div class="glass card"><h3 data-i="t1"></h3><div class="chips"><span>Snowflake</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>Redshift</span><span>Synapse</span><span>Cosmos DB</span></div></div>
-    <div class="glass card"><h3 data-i="t2"></h3><div class="chips"><span>Azure Data Factory</span><span>AWS Glue</span><span>Airbyte</span><span>Snowflake Tasks</span><span>Stored Procs / UDFs</span></div></div>
-    <div class="glass card"><h3 data-i="t3"></h3><div class="chips"><span>AWS</span><span>Azure</span><span>GCP</span><span>Lambda</span><span>Azure Functions</span><span>Logic Apps</span></div></div>
-    <div class="glass card"><h3 data-i="t4"></h3><div class="chips"><span>Python</span><span>SQL</span><span>OCI Generative AI</span></div></div>
-    <div class="glass card"><h3 data-i="t5"></h3><div class="chips"><span>Power BI</span><span>Excel</span><span>Job monitoring dashboards</span></div></div>
-    <div class="glass card"><h3 data-i="t6"></h3><div class="chips"><span>Azure DevOps</span><span>GitHub</span><span>CodeCommit</span><span>Postman</span><span>JMeter</span><span>Jira</span><span>Lucidchart</span></div></div>
-  </div>
-</section>
-
-<section id="cert"><h2 data-i="n_cert"></h2>
-  <div class="grid">
-  <!-- Images: assets/certs/<name>.png. Links: replace with your Credly / Microsoft / Oracle / Coursera credential URLs -->
-    <a class="glass cc" href="https://www.credly.com/users/YOUR-NAME" target="_blank" rel="noopener"><div class="ci">❄️<img src="assets/certs/snowpro.png" alt="SnowPro Core" onerror="this.remove()"></div><div class="t"><b>SnowPro Core</b><span>Snowflake Inc</span><em data-i="vf"></em></div></a>
-    <a class="glass cc" href="https://catalog-education.oracle.com/pls/certview/YOUR-LINK" target="_blank" rel="noopener"><div class="ci">🤖<img src="assets/certs/oci-genai.png" alt="OCI Generative AI Certified Professional" onerror="this.remove()"></div><div class="t"><b>OCI Generative AI Certified Professional</b><span>Oracle</span><em data-i="vf"></em></div></a>
-    <a class="glass cc" href="https://learn.microsoft.com/users/YOUR-NAME" target="_blank" rel="noopener"><div class="ci">☁️<img src="assets/certs/dp900.png" alt="Azure Data Fundamentals (DP-900)" onerror="this.remove()"></div><div class="t"><b>Azure Data Fundamentals (DP-900)</b><span>Microsoft</span><em data-i="vf"></em></div></a>
-    <a class="glass cc" href="https://learn.microsoft.com/users/YOUR-NAME" target="_blank" rel="noopener"><div class="ci">☁️<img src="assets/certs/az900.png" alt="Azure Fundamentals (AZ-900)" onerror="this.remove()"></div><div class="t"><b>Azure Fundamentals (AZ-900)</b><span>Microsoft</span><em data-i="vf"></em></div></a>
-    <a class="glass cc" href="https://coursera.org/verify/YOUR-ID" target="_blank" rel="noopener"><div class="ci">📊<img src="assets/certs/excel.png" alt="MS Excel" onerror="this.remove()"></div><div class="t"><b>MS Excel</b><span>Macquarie University · Coursera</span><em data-i="vf"></em></div></a>
-  </div>
-  <div class="grid" style="margin-top:16px">
-    <div class="glass card"><h3 data-i="edu"></h3><p data-i="edu_t"></p></div>
-    <div class="glass card"><h3 data-i="aw"></h3><p data-i="aw_t"></p></div>
-    <div class="glass card"><h3 data-i="lg"></h3><p data-i="lg_t"></p></div>
-  </div>
-</section>
-
-<section id="contact"><h2 data-i="n_contact"></h2>
-  <div class="glass ct"><p data-i="ct"></p>
-    <!-- Form: create a free form at formspree.io and replace YOUR_FORM_ID. Until then, Send opens your email app instead. -->
-    <form class="fm" id="fm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input name="name" required data-ph="f_n"><input name="email" type="email" required data-ph="f_e">
-      <textarea name="message" rows="4" required data-ph="f_m"></textarea>
-      <button class="btn p" type="submit" data-i="f_s"></button><small id="fs"></small>
-    </form>
-    <div class="btns" style="justify-content:center">
-      <a class="btn" href="mailto:tejaspatil53@gmail.com">tejaspatil53@gmail.com</a>
-      <a class="btn" href="https://www.linkedin.com/in/tejaspatil53" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="resume.pdf" download data-i="cta3"></a>
-    </div></div>
-</section>
-</main>
-<footer>© <span id="yr"></span> Tejas Patil</footer>
+<main class="wrap" id="app"></main>
+<footer><span class="hand" style="font-size:1.4rem">Crafted with ☕, Python & a few shuttlecocks 🏸</span><br>
+  © <span id="yr"></span> All rights reserved · Page managed by Tejas Patil</footer>
 
 <script>
+/* ===== 6. YOUR DETAILS — edit links here ===== */
+const ME={name:"Tejas Patil",email:"tejaspatil53@gmail.com",
+  linkedin:"https://www.linkedin.com/in/tejaspatil53",github:"https://github.com/tejaspatil98",
+  resume:"documents/Tejas_Patil_AI_Data_Engineer.pdf", /* put the PDF next to index.html */
+  photo:"documents/tejas_profile_pic.png" /* put your photo next to index.html */};
+
+/* ===== 7. LANGUAGES — add a language: copy a block, add <option> in header ===== */
 const T={
-en:{n_clients:"Clients & domains",n_pp:"Personal projects",cta3:"Download résumé",open:"open to Data & AI roles",cy1:"South Africa",cy2:"Singapore",d_tel:"Telecom",d_tr:"Transportation",c1:"On-prem to AWS migration using Glue and EC2, plus ADF orchestration.",c2:"IBM to Snowflake data platform: 250+ pipelines from 35+ source systems.",c3:"Alerting with Logic Apps, Functions and App Insights.",pt:"Your project title",pd:"Two lines on the problem, what you built and the result.",pl:"View on GitHub",vf:"Verify credential",f_n:"Your name",f_e:"Your email",f_m:"Message",f_s:"Send message",f_ok:"Thanks! Your message is on its way.",n_about:"About",n_why:"Why hire me",n_exp:"Experience",n_proj:"Projects",n_tech:"Tools & technologies",n_cert:"Certifications",n_contact:"Contact",
-hi:"Hi, I'm",role:"Data & AI Engineer",tag:"I build cloud data platforms on Snowflake, AWS and Azure that turn raw data into reliable insight, and I'm now taking that foundation into generative AI.",
-cta1:"Get in touch",cta2:"See my work",s1:"years of experience",s2:"ingestion pipelines built",s3:"source systems migrated",s4:"product features driven",
-about:"I'm a cloud-native Data & AI Engineer with 5.5+ years of hands-on experience designing and delivering scalable data platforms across AWS, Azure and Snowflake. My work covers cloud migrations, ingestion frameworks, ETL/ELT design and pipeline orchestration. I care about performance, observability and clean data models, and I'm building on that base with generative AI (OCI Generative AI certified).",
-w1t:"Proven at scale",w1:"Delivered 250+ ingestion pipelines and migrated 35+ source systems from IBM to Snowflake for a leading telecom in Singapore.",
-w2t:"Multi-cloud fluency",w2:"Production experience on AWS, Azure and Snowflake, from Glue and Lambda to Data Factory and Logic Apps.",
-w3t:"Performance-minded",w3:"Ran monthly performance testing of ingestion, AWS infrastructure and Snowflake, reaching 95% efficiency.",
-w4t:"Product thinker",w4:"Worked with a tool's product team to drive 120+ features that took an early-stage ELT tool to production grade.",
-j1d:"Apr 2023 – Present",j1a:"Led a data platform project for a leading telecom in Singapore, moving 35+ IBM source systems to Snowflake on AWS.",
-j1b:"Built 250+ full, incremental and dedupe ingestion pipelines from files (JSON, XML, CSV, XLS), APIs (Salesforce, Adobe) and databases (Oracle, MySQL, PostgreSQL, SQL Server).",
-j1c:"Designed monitoring dashboards for ingestion objects, Snowflake tasks and raw-to-modelled data movement via stored procedures and UDFs.",
-j1d2:"Helped mature “Data Pipes”, an Airbyte-based ETL/ELT tool, by reporting issues and feature gaps daily, leading to 120+ enhancements.",
-j2a:"Migrated a South African telecom's workloads from on-prem to AWS, building infrastructure with Glue and EC2. Built ADF pipelines for orchestration.",
-j2b:"Created alerting with Azure Logic Apps, Functions and App Insights for a transportation client, and designed complex stored procedures.",
-j3a:"Designed REST APIs and Azure Data Factory pipelines, ran functional and non-functional testing, and delivered client-ready documentation.",
-j4a:"Wrote SQL and managed PostgreSQL databases for proofs of concept, with first exposure to AWS, Azure and GCP.",
-p1t:"IBM to Snowflake migration",p1:"Moved 35+ source systems for a Singapore telecom to a Snowflake data platform on AWS, with monthly performance testing.",
-p2t:"Data Pipes ELT tool",p2:"Drove 120+ features and fixes on an Airbyte-based tool, turning an early prototype into a scalable production solution.",
-p3t:"On-prem to AWS cloud migration",p3:"Rebuilt data infrastructure for a South African telecom on AWS using Glue and EC2.",
-p4t:"Azure alerting system",p4:"Automated alerts for a transportation client with Logic Apps, Functions and Application Insights.",
-t1:"Databases & warehousing",t2:"ETL / ELT & orchestration",t3:"Cloud & serverless",t4:"Languages & AI",t5:"BI & reporting",t6:"DevOps, testing & delivery",
-edu:"Education",edu_t:"B.E. Mechanical, Savitribai Phule Pune University. CGPA 8.37/10, First Class with Distinction (2016–2020).",
-aw:"Awards",aw_t:"Rising Star of the Year 2021 and multiple Star of the Month recognitions at UXLI Limited.",
-lg:"Languages",lg_t:"English (full professional), Hindi and Marathi (native), German and French (elementary).",
-ct:"Open to Data & AI engineering roles and interesting data problems. Let's talk."},
-de:{n_clients:"Kunden & Branchen",n_pp:"Persönliche Projekte",cta3:"Lebenslauf herunterladen",open:"offen für Data- & AI-Rollen",cy1:"Südafrika",cy2:"Singapur",d_tel:"Telekommunikation",d_tr:"Transport",c1:"Migration von On-Prem zu AWS mit Glue und EC2, plus ADF-Orchestrierung.",c2:"Datenplattform von IBM zu Snowflake: 250+ Pipelines aus 35+ Quellsystemen.",c3:"Alarmierung mit Logic Apps, Functions und App Insights.",pt:"Ihr Projekttitel",pd:"Zwei Zeilen zu Problem, Lösung und Ergebnis.",pl:"Auf GitHub ansehen",vf:"Zertifikat prüfen",f_n:"Ihr Name",f_e:"Ihre E-Mail",f_m:"Nachricht",f_s:"Nachricht senden",f_ok:"Danke! Ihre Nachricht ist unterwegs.",n_about:"Über mich",n_why:"Warum ich",n_exp:"Erfahrung",n_proj:"Projekte",n_tech:"Tools & Technologien",n_cert:"Zertifikate",n_contact:"Kontakt",
-hi:"Hallo, ich bin",role:"Data & AI Engineer",tag:"Ich baue Cloud-Datenplattformen auf Snowflake, AWS und Azure, die Rohdaten in verlässliche Erkenntnisse verwandeln, und erweitere dieses Fundament jetzt um generative KI.",
-cta1:"Kontakt aufnehmen",cta2:"Meine Arbeit",s1:"Jahre Erfahrung",s2:"Ingestion-Pipelines gebaut",s3:"Quellsysteme migriert",s4:"Produktfeatures angestoßen",
-about:"Ich bin ein Cloud-nativer Data & AI Engineer mit über 5,5 Jahren praktischer Erfahrung im Entwurf und der Umsetzung skalierbarer Datenplattformen auf AWS, Azure und Snowflake. Mein Schwerpunkt liegt auf Cloud-Migrationen, Ingestion-Frameworks, ETL/ELT-Design und Pipeline-Orchestrierung. Performance, Beobachtbarkeit und saubere Datenmodelle sind mir wichtig, und darauf baue ich mit generativer KI auf (OCI Generative AI zertifiziert).",
-w1t:"Im großen Maßstab bewährt",w1:"250+ Ingestion-Pipelines geliefert und 35+ Quellsysteme für einen führenden Telekommunikationsanbieter in Singapur von IBM zu Snowflake migriert.",
-w2t:"Multi-Cloud-Kompetenz",w2:"Praxis in Produktion auf AWS, Azure und Snowflake, von Glue und Lambda bis Data Factory und Logic Apps.",
-w3t:"Performance-orientiert",w3:"Monatliche Performance-Tests für Ingestion, AWS-Infrastruktur und Snowflake, mit 95 % Effizienz.",
-w4t:"Produktdenken",w4:"Mit dem Produktteam eines Tools 120+ Features vorangetrieben, die ein frühes ELT-Tool zur Produktionsreife brachten.",
-j1d:"Apr 2023 – heute",j1a:"Leitung eines Datenplattform-Projekts für einen führenden Telekommunikationsanbieter in Singapur: Migration von 35+ IBM-Quellsystemen zu Snowflake auf AWS.",
-j1b:"250+ Full-, Incremental- und Dedupe-Pipelines aus Dateien (JSON, XML, CSV, XLS), APIs (Salesforce, Adobe) und Datenbanken (Oracle, MySQL, PostgreSQL, SQL Server) gebaut.",
-j1c:"Monitoring-Dashboards für Ingestion-Objekte, Snowflake-Tasks und die Datenbewegung von Raw zu Modelled per Stored Procedures und UDFs entworfen.",
-j1d2:"Den Airbyte-basierten ETL/ELT-Tool „Data Pipes“ durch tägliche Meldung von Fehlern und Funktionslücken weiterentwickelt, mit 120+ Verbesserungen.",
-j2a:"Workloads eines südafrikanischen Telekommunikationsanbieters von On-Prem zu AWS migriert, Infrastruktur mit Glue und EC2 aufgebaut. ADF-Pipelines zur Orchestrierung erstellt.",
-j2b:"Alarmierung mit Azure Logic Apps, Functions und App Insights für einen Transportkunden umgesetzt und komplexe Stored Procedures entworfen.",
-j3a:"REST-APIs und Azure-Data-Factory-Pipelines entworfen, funktionale und nicht-funktionale Tests durchgeführt und kundenreife Dokumentation geliefert.",
-j4a:"SQL geschrieben und PostgreSQL-Datenbanken für Proofs of Concept betreut, erste Erfahrungen mit AWS, Azure und GCP.",
-p1t:"Migration von IBM zu Snowflake",p1:"35+ Quellsysteme für einen Telekommunikationsanbieter in Singapur auf eine Snowflake-Plattform auf AWS migriert, mit monatlichen Performance-Tests.",
-p2t:"ELT-Tool Data Pipes",p2:"120+ Features und Fixes für ein Airbyte-basiertes Tool vorangetrieben und so einen frühen Prototyp in eine skalierbare Produktionslösung verwandelt.",
-p3t:"Cloud-Migration von On-Prem zu AWS",p3:"Dateninfrastruktur für einen südafrikanischen Telekommunikationsanbieter mit Glue und EC2 auf AWS neu aufgebaut.",
-p4t:"Azure-Alarmierungssystem",p4:"Alarme für einen Transportkunden mit Logic Apps, Functions und Application Insights automatisiert.",
-t1:"Datenbanken & Warehousing",t2:"ETL / ELT & Orchestrierung",t3:"Cloud & Serverless",t4:"Sprachen & KI",t5:"BI & Reporting",t6:"DevOps, Testing & Delivery",
-edu:"Ausbildung",edu_t:"B.E. Maschinenbau, Savitribai Phule Pune University. CGPA 8,37/10, mit Auszeichnung (2016–2020).",
-aw:"Auszeichnungen",aw_t:"Rising Star of the Year 2021 und mehrfach Star of the Month bei UXLI Limited.",
-lg:"Sprachen",lg_t:"Englisch (verhandlungssicher), Hindi und Marathi (Muttersprache), Deutsch und Französisch (Grundkenntnisse).",
-ct:"Offen für Data-&-AI-Engineering-Rollen und spannende Datenprobleme. Sprechen wir."},
-fr:{n_clients:"Clients & secteurs",n_pp:"Projets personnels",cta3:"Télécharger mon CV",open:"ouvert aux postes Data & IA",cy1:"Afrique du Sud",cy2:"Singapour",d_tel:"Télécom",d_tr:"Transport",c1:"Migration du on-prem vers AWS avec Glue et EC2, plus orchestration ADF.",c2:"Plateforme de données d'IBM vers Snowflake : 250+ pipelines depuis 35+ systèmes sources.",c3:"Alertes avec Logic Apps, Functions et App Insights.",pt:"Titre de votre projet",pd:"Deux lignes sur le problème, la solution et le résultat.",pl:"Voir sur GitHub",vf:"Vérifier la certification",f_n:"Votre nom",f_e:"Votre e-mail",f_m:"Message",f_s:"Envoyer",f_ok:"Merci ! Votre message est envoyé.",n_about:"À propos",n_why:"Pourquoi moi",n_exp:"Expérience",n_proj:"Projets",n_tech:"Outils & technologies",n_cert:"Certifications",n_contact:"Contact",
-hi:"Bonjour, je suis",role:"Ingénieur Data & IA",tag:"Je conçois des plateformes de données cloud sur Snowflake, AWS et Azure qui transforment les données brutes en informations fiables, et j'étends ce socle vers l'IA générative.",
-cta1:"Me contacter",cta2:"Voir mes travaux",s1:"ans d'expérience",s2:"pipelines d'ingestion créés",s3:"systèmes sources migrés",s4:"fonctionnalités produit initiées",
-about:"Je suis un ingénieur Data & IA cloud-native avec plus de 5,5 ans d'expérience concrète dans la conception et la livraison de plateformes de données évolutives sur AWS, Azure et Snowflake. Mon travail couvre les migrations cloud, les frameworks d'ingestion, la conception ETL/ELT et l'orchestration de pipelines. La performance, l'observabilité et la qualité des modèles de données comptent pour moi, et je m'appuie dessus pour aller vers l'IA générative (certifié OCI Generative AI).",
-w1t:"Éprouvé à grande échelle",w1:"250+ pipelines d'ingestion livrés et 35+ systèmes sources migrés d'IBM vers Snowflake pour un grand opérateur télécom à Singapour.",
-w2t:"Maîtrise multi-cloud",w2:"Expérience en production sur AWS, Azure et Snowflake, de Glue et Lambda à Data Factory et Logic Apps.",
-w3t:"Axé sur la performance",w3:"Tests de performance mensuels sur l'ingestion, l'infrastructure AWS et Snowflake, avec 95 % d'efficacité.",
-w4t:"Esprit produit",w4:"Collaboration avec l'équipe produit d'un outil pour porter 120+ fonctionnalités qui ont amené un outil ELT naissant au niveau production.",
-j1d:"Avr. 2023 – aujourd'hui",j1a:"Pilotage d'un projet de plateforme de données pour un grand opérateur télécom à Singapour : migration de 35+ systèmes sources IBM vers Snowflake sur AWS.",
-j1b:"Création de 250+ pipelines d'ingestion (complets, incrémentaux, dédoublonnage) depuis des fichiers (JSON, XML, CSV, XLS), des API (Salesforce, Adobe) et des bases (Oracle, MySQL, PostgreSQL, SQL Server).",
-j1c:"Conception de tableaux de bord de suivi pour les objets d'ingestion, les tâches Snowflake et les flux de la couche brute vers la couche modélisée via procédures stockées et UDF.",
-j1d2:"Contribution à la maturité de « Data Pipes », un outil ETL/ELT basé sur Airbyte, en remontant chaque jour bugs et manques, avec 120+ améliorations à la clé.",
-j2a:"Migration des charges d'un opérateur télécom sud-africain du on-prem vers AWS, avec Glue et EC2. Pipelines ADF pour l'orchestration.",
-j2b:"Mise en place d'alertes avec Azure Logic Apps, Functions et App Insights pour un client du transport, et conception de procédures stockées complexes.",
-j3a:"Conception d'API REST et de pipelines Azure Data Factory, tests fonctionnels et non fonctionnels, documentation prête pour le client.",
-j4a:"Requêtes SQL et gestion de bases PostgreSQL pour des preuves de concept, premiers pas avec AWS, Azure et GCP.",
-p1t:"Migration d'IBM vers Snowflake",p1:"Migration de 35+ systèmes sources d'un opérateur télécom singapourien vers une plateforme Snowflake sur AWS, avec tests de performance mensuels.",
-p2t:"Outil ELT Data Pipes",p2:"120+ fonctionnalités et correctifs sur un outil basé sur Airbyte, faisant d'un prototype une solution de production évolutive.",
-p3t:"Migration cloud on-prem vers AWS",p3:"Reconstruction de l'infrastructure de données d'un opérateur télécom sud-africain sur AWS avec Glue et EC2.",
-p4t:"Système d'alertes Azure",p4:"Automatisation des alertes d'un client du transport avec Logic Apps, Functions et Application Insights.",
-t1:"Bases de données & entrepôts",t2:"ETL / ELT & orchestration",t3:"Cloud & serverless",t4:"Langages & IA",t5:"BI & reporting",t6:"DevOps, tests & livraison",
-edu:"Formation",edu_t:"B.E. Génie mécanique, Savitribai Phule Pune University. CGPA 8,37/10, mention très bien (2016–2020).",
-aw:"Distinctions",aw_t:"Rising Star of the Year 2021 et plusieurs Star of the Month chez UXLI Limited.",
-lg:"Langues",lg_t:"Anglais (professionnel), hindi et marathi (langues maternelles), allemand et français (élémentaire).",
-ct:"Ouvert aux postes d'ingénieur Data & IA et aux beaux défis de données. Discutons-en."}};
-const $=s=>document.querySelector(s),root=document.documentElement;
-const get=k=>{try{return localStorage.getItem(k)}catch(e){return null}},set=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
-function setLang(l){if(!T[l])l='en';root.lang=l;$('#lang').value=l;set('lang',l);
- document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);
- document.querySelectorAll('[data-ph]').forEach(e=>e.placeholder=T[l][e.dataset.ph]);
- document.title='Tejas Patil · '+T[l].role}
-function setTheme(t){root.dataset.theme=t;$('#theme').textContent=t=='dark'?'☀️':'🌙';set('theme',t)}
-$('#lang').onchange=e=>setLang(e.target.value);
-$('#theme').onclick=()=>setTheme(root.dataset.theme=='dark'?'light':'dark');
-setTheme(get('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-setLang(get('lang')||(navigator.language||'en').slice(0,2));
-$('#fm').onsubmit=async e=>{const f=e.target;
- if(f.action.includes('YOUR_FORM_ID')){e.preventDefault();location.href='mailto:tejaspatil53@gmail.com?subject='+encodeURIComponent('Portfolio: '+f.name.value)+'&body='+encodeURIComponent(f.message.value+'\n\n'+f.name.value+' <'+f.email.value+'>');return}
- e.preventDefault();try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){f.reset();$('#fs').textContent=T[root.lang].f_ok}}catch(x){}};
-$('#yr').textContent=new Date().getFullYear();
+ en:{home:"Home",why:"Why hire me",exp:"Experience",proj:"Projects",cert:"Certification",say:"What Leaders & Peers Say",others:"Others",contact:"Contact",
+     hi:"Hi, I'm Tejas 👋",role:"AI & Cloud Data Engineer",avail:"Available for hire",
+     intro:"5.5+ years turning complex enterprise data into scalable cloud solutions across Telecom, Transport, Manufacturing and others — now building AI-ready data with xLytix.",
+     quote:"Jack of all 😉 — in the AI era, nobody stays master of one.",badminton:"Beyond the desk, find me on the badminton court 🏸"},
+ de:{home:"Start",why:"Warum ich",exp:"Erfahrung",proj:"Projekte",cert:"Zertifizierungen",say:"Das sagen Führungskräfte & Kollegen",others:"Sonstiges",contact:"Kontakt",
+     hi:"Hallo, ich bin Tejas 👋",role:"KI- & Cloud-Dateningenieur",avail:"Bereit für neue Herausforderungen",
+     intro:"5,5+ Jahre Erfahrung darin, komplexe Unternehmensdaten in skalierbare Cloud-Lösungen in den Bereichen Telekommunikation, Transport, Fertigung und mehr zu verwandeln — jetzt baue ich KI-fähige Daten mit xLytix auf.",
+     quote:"Tausendsassa 😉 — in der KI-Ära bleibt niemand Meister von nur einem Fach.",badminton:"Abseits des Schreibtischs findet man mich auf dem Badmintonplatz 🏸"},
+ fr:{home:"Accueil",why:"Pourquoi moi",exp:"Expérience",proj:"Projets",cert:"Certifications",say:"Témoignages de leaders & pairs",others:"Autres",contact:"Contact",
+     hi:"Salut, moi c'est Tejas 👋",role:"Ingénieur Data IA & Cloud",avail:"Disponible pour de nouvelles opportunités",
+     intro:"Plus de 5,5 ans d'expérience à transformer des données d'entreprise complexes en solutions cloud évolutives (Télécom, Transport, Industrie et autres) — aujourd'hui, je crée des données prêtes pour l'IA avec xLytix.",
+     quote:"Touche-à-tout 😉 — à l'ère de l'IA, plus personne n'est maître d'un seul domaine.",badminton:"Hors du bureau, retrouvez-moi sur un terrain de badminton 🏸"}
+};
+
+
+/* ===== 8. CONTENT — add/remove items; the page rebuilds itself ===== */
+const WHY=[
+  ["⚡","I own the outcome","From requirements and architecture to engineering, deployment and production support—I stay accountable beyond simply writing the code."],
+
+  ["🏗️","I build for production","5.5+ years of cloud data engineering across 35+ source systems and 250+ pipelines, with a focus on scalable, reliable and maintainable solutions."],
+
+  ["🧪","I think like a product engineer","Helped take an Airbyte-based ingestion product from an immature state to production readiness by uncovering 120+ bugs, feature gaps and performance issues and working with product and engineering teams to resolve them."],
+
+  ["🤖","I build toward AI","Deep understanding of ML, deep learning, Transformers, LLMs, RAG and GenAI—backed by strong data engineering foundations for building AI-ready data pipelines."],
+
+  ["🔬","I learn by building","Currently evaluating and shaping an end-to-end data & AI platform through real POCs across ingestion, governance, modelling, analytics and AI workflows."],
+
+  ["🌍","I work across boundaries","Comfortable navigating clients, architects, developers, product teams and multiple vendors across global locations—turning ambiguous requirements into clear technical outcomes."]
+];
+const EXP=[
+ ["Consultant – Data & AI Engineering","10/2025 – Now",
+`• Contributing to the evolution of xLytix, a unified AI-powered data enablement platform, through product validation, real-world use-case testing, 
+gap analysis, and feature recommendations. <br />
+• Building client-specific end-to-end AI data engineering PoCs, including data ingestion, transformation, modeling, AI-ready RAG based and ML data 
+pipelines, analytics, and dashboards across FMCG, Pharma, Manufacturing, and Financial Services domains.<br />
+• Pitch and deliver tailored product demonstrations while engineering customized datasets and workflows to translate business requirements into 
+rapid ~2-week pilots and PoCs that showcase platform capabilities.<br />
+• Working with product and engineering teams to identify bugs, usability gaps, missing capabilities, and new feature requirements, helping improve 
+platform scalability, usability, and enterprise readiness.`],
+ ["Senior Data Engineer","06/2023 – 09/2025",
+`Contributed to end-to-end data engineering delivery for StarHub’s Customer 360 platform, collaborating across multi-vendor ecosystems along 
+with data architects, client stakeholders, and program managers across requirements, design, development, and implementation. <br />
+• Supported migration from IBM Netezza DWH to Snowflake and re-engineered upstream ingestion from 35+ source systems including MySQL, 
+SQL Server, Oracle, PostgreSQL, SFTP, AWS S3, and Salesforce; designed and developed 250+ full, incremental, and deduplication pipelines using 
+Data Pipes (Airbyte-based ETL/ELT tool). <br />
+• Helped in designing and implementing Snowflake Raw, Modelled, and Information layers, transforming raw data into standardized telecom data 
+models, facts, dimensions, and business views, with Snowflake Tasks, schedules, and dependencies orchestrating. <br />
+• Contributed to the evolution of Data Pipes tool by identifying product gaps & operational issues, contributing to 120+ features/enhancements, and 
+supporting performance testing and monitoring that improved platform efficiency to ~95%. <br />
+ `],
+ ["Cloud Data Engineer","03/2022 – 05/2023",`
+• Engineered a cloud-native data warehouse modernization solution for a global telecom client - Vodacom (South Africa), migrating legacy on
+premises workloads to AWS for contact-center and operational analytics.<br />
+• Built metadata-driven ETL and orchestration frameworks using AWS Glue, PySpark, S3, Redshift, Lambda, Step Functions, and EventBridge, 
+enabling reusable and scalable data processing.<br />
+• Developed reusable data-loading adapters and automated Redshift stored-procedure execution, implementing dependency management, error 
+handling, batch recovery, and automated workflow orchestration.<br />
+• Concurrently supported the Transport for Wales Rail (UK) engagement by overseeing new pipeline development, troubleshooting production issues, 
+and maintaining existing Azure data integration workloads.
+ `],
+ ["Software Engineer Trainee","01/2021 – 03/2022",`
+• Contributed towards the Azure data platform from inception for TfW Rail (Wales, UK), powering web, ticketing, and performance analytics 
+systems.<br />
+• Help designed a unique configuration-driven Azure Integration Framework using dynamic ADF pipelines to centralize orchestration, auditing, and 
+error handling.<br />
+• Built reusable pipeline patterns that minimized manual code maintenance and enabled rapid, low-code onboarding of new data integrations.<br />
+• Developed daily ETL/ELT pipelines to ingest data from Cosmos DB, ADLS Gen2, PostgreSQL, and SFTP into Synapse for KPI reporting.<br />
+• Tested and maintained Python REST APIs on Azure Web Apps/Functions, while leading production troubleshooting and data flow documentation.<br />
+ `]
+];
+/* CLIENTS: [name, domain, one-liner, OPTIONAL logo path].
+   TO ADD A LOGO: 1) make a folder "logos" next to index.html and drop e.g. vodacom.png in it
+                  2) delete the comment marks around the logo path of that client below. It appears left of the name. */
+const CLIENTS=[
+ ["Vodacom, South Africa","Telecom","S3 → Glue → Redshift","logos/Vodacom_logo.svg"],
+ ["StarHub, Singapore","Telecom","Netezza → Data Pipes → Snowflake","logos/sh_logo.svg"],
+ ["Transport for Wales Rail, UK","Transportation","# RestAPIs (Azure Web App/Functions) → Cosmos DB <br /># ADLS → ADF → Synapse","logos/tfwr_logo.png"],
+ ["JBT Corporation, USA","Manufacturing","SFTP/ADLS → ADF → Synapse","logos/jbt_logo.png"],
+ ["& more pilots / PoCs","FMCG · Pharma · Finance","xLytix RAG & ML pipelines"]];
+const PROJ=[
+["Intelligent Loan Approval System","Machine Learning","KNN, Logistic Regression, Naive Bayes; EDA, feature engineering, precision/recall/F1.",ME.github+"/Intelligent-Loan-Approval-System"],
+["FoodDelivery AI Data Engineering","Data Engineering · GenAI","S3 → Snowflake with Airflow, 3-tier dbt medallion, OpenAI for review enrichment, RAG chat, text-to-SQL.",ME.github+"/FoodDelivery-AI-Data-Engineering-End-To-End-Project"],
+["Healthcare Revenue Cycle Management (RCM) Data Platform","Data Engineering","SQL DB & APIs → ADF → ADLS Gen2 → Databricks Medallion (PySpark/Delta) → Unity Catalog → Star Schema (SCD2).",ME.github+"/Heathcare-RSM-Azure-DataEngineering-Project"]
+  /* ,["New project","Domain","Description","https://github.com/..."] */];
+const CERT=[
+ ["SnowPro Core","Snowflake",["Warehousing","Data sharing","Security"],"https://achieve.snowflake.com/cacfe2ce-80de-4932-8454-892c040acd0f"],
+ ["OCI Generative AI Professional","Oracle",["LLMs","RAG","Prompting"],"https://catalog-education.oracle.com/pls/certview/sharebadge?id=DBBA2CA10A39B069FA6242AD33F740365055DF60191AE687FCC693249636801D"],
+ ["Azure Data Fundamentals DP-900","Microsoft",["Azure data","Analytics"],"https://www.credly.com/badges/4af04a28-614d-4b3c-9558-37bc300e0a84/linked_in_profile"],
+ ["Azure Fundamentals AZ-900","Microsoft",["Cloud concepts","Azure"],"https://www.credly.com/badges/815c42f8-55bf-4f01-af76-67bd6ab26776/linked_in_profile"],
+ ["Python Certification","Univ. of Michigan · Coursera",["Python","Programming"],"https://www.coursera.org/account/accomplishments/records/HGK6FNW7MGQG"],
+ ["Getting Started with ML","AWS · Coursera",["ML basics","AWS"],"https://www.coursera.org/account/accomplishments/records/Z5259EU2LAE2"],
+ ["Excel Skills for Business","Macquarie Univ. · Coursera",["Excel","Analysis"],"https://www.coursera.org/account/accomplishments/records/HAGWB35FAQCN"],
+ ["Six Sigma Yellow Belt","Univ. System of Georgia · Coursera",["Quality","DMAIC"],"https://www.coursera.org/account/accomplishments/specialization/NLWHYE5UQRKT"]
+ ];
+/* Replace text/email with real testimonials and names */
+const SAY=[
+  {
+    text:"Tejas started his journey with us as an intern in late 2020 and has grown remarkably into a strong senior and technical leadership professional. His ability to take ownership, manage responsibilities, contribute to successful client deliveries, and adapt to new technologies has consistently stood out. His technical versatility, learning mindset, and ability to take on new challenges have made him a dependable and valuable member of our organization.",
+    name:"Avinash Walvekar",
+    role:"Director, COO & Co-founder, UXLI Limited",
+    mail:"awalvekar@uxli.com"
+  },
+  {
+    text:"Tejas has worked closely with me across multiple projects, contributing to solution architecture and business process design. His strong technical expertise, combined with clear communication, enables him to break down complex concepts and confidently present solutions to clients. He has a strong ability to understand both technical and business perspectives, build client confidence, and contribute to successful project outcomes and lasting client satisfaction.",
+    name:"Atul Raje",
+    role:"Chief Technology Officer, UXLI Limited",
+    mail:"araje@uxli.com"
+  },
+  {
+    text:"Tejas has worked with me across several major projects, contributing from solution brainstorming and data architecture design through to end-to-end implementation. He has a strong understanding of data engineering and DevOps, combined with the ability to take ownership and turn architectural ideas into practical, scalable solutions. His certifications across leading cloud platforms and growing expertise in Generative AI further strengthen his ability to design modern, AI-ready data solutions and adapt to evolving technology landscapes.",
+    name:"Gary Kanda",
+    role:"Solution & Data Architect, Head at Data, UXLI Limited",
+    mail:"gkanda@uxli.com"
+  },
+  {
+    text:"Tejas has been involved throughout the complete project lifecycle—from requirement gathering, development, testing, and deployment to production support, maintenance, and handover. His strong understanding of the overall project flow and commitment to quality have consistently helped him deliver work ahead of schedule and with minimal errors. He has also confidently led client discussions in my absence, demonstrating strong ownership, communication, and client-handling skills.",
+    name:"Ajay Bonam",
+    role:"Senior Program Manager & Delivery Lead, UXLI Limited",
+    mail:"abonam@uxli.com"
+  },
+  {
+    text:"Tejas brings strong hands-on expertise across the data engineering lifecycle, from data integration and ingestion to modelling and reporting. His proficiency in Python and SQL, combined with his experience in designing cloud-based ingestion and orchestration pipelines, enables him to build reliable data solutions end to end. He has a strong ability to translate client requirements into well-structured data models and business layers that are practical, scalable, and ready for reporting and analytics.",
+    name:"Mohammed Majid",
+    role:"Data Management Lead, UXLI Limited",
+    mail:"mdmajid@uxli.com"
+  },
+    {
+    text:"Tejas and I have worked together on several data engineering projects, where he has consistently contributed to building efficient, high-performance solutions with a strong focus on reliability and maintainability. He has a good understanding of the overall project and uses that perspective to design solutions that are flexible and easy to extend as requirements evolve. His ability to take ownership and handle responsibilities independently, including in my absence, has made him a dependable team member.",
+    name:"Bhanu Kiran Bommu",
+    role:"Colleague, Senior Data Engineer, UXLI Limited",
+    mail:"bbommu@uxli.com"
+  }
+];
+/* TOOLS by category. Item = [label, icon, optional class]. icon = devicon name, "si:name" (simple-icons) or "e:emoji".
+   Add a row to a category or a whole new category; it becomes a new scrolling row. */
+const TOOLCATS=[
+ ["Languages & Frameworks",[["Python","python"],["SQL","mysql"],["PySpark","apachespark"],["Pandas","pandas"],["NumPy","numpy"],["Scikit-learn","scikitlearn"],["PyTorch","pytorch"],["Hugging Face","si:huggingface"],["LangChain","si:langchain"]]],
+ ["Cloud Platforms",[["AWS","aws"],["Azure","azure"],["Snowflake","snowflake"]]],
+ ["Cloud Services",[["ADLS Gen2","azure"],["ADF","azure"],["Synapse","azure"],["Cosmos DB","azure"],["S3","s3"],["Glue","glue"],["Lambda","lambda"],["Redshift","redshift"],["Step Functions","stepfn"],["Snowpark","snowflake"]]],
+ ["AI & Data Engineering",[["GenAI","e:✨"],["RAG","si:langchain"],["LLMs","si:huggingface"],["MLOps","si:mlflow"],["Data Modeling","e:🧩"],["Orchestration","apacheairflow"]]],
+ ["Open Source & DevOps",[["Spark","apachespark"],["Airflow","apacheairflow"],["dbt","dbt"],["Airbyte","si:airbyte"],["ClickHouse","si:clickhouse"],["Superset","si:apachesuperset"],["Git","git"],["GitHub","github","inv"],["Azure DevOps","azuredevops"],["Postman","postman"]]]
+];
+/* Contact links [label, url, icon, optional class]. Un-comment a line to add it. */
+const LINKS=[
+ ["GitHub",ME.github,"github","inv"],
+ ["Resume",ME.resume,""],
+ // ["Discord","https://discord.com/users/XXXX","si:discord"],
+ // ["ORCID","https://orcid.org/XXXX","si:orcid"],
+ // ["Medium","https://medium.com/@XXXX","si:medium","inv"],
+ // ["YouTube","https://youtube.com/@XXXX","si:youtube"],
+];
+const LEAD=[
+["Chandicha Ganpati Nashik (Raviwar Karanja Ganeshotsav Mandal Trust)",["Secretary'2026", " Festival Committee"],`
+- 12+ Years Community Leadership <br/>
+- Brand Partnerships & Negotiations <br/>
+- ₹20L+ Sponsorships Secured every year <br/>
+- Year-round social & community initiatives <br/> 
+- 40–50 patients served daily through charitable hospital`],
+
+["ISTE Students Chapter","President · 2018–2020",`
+- Led a 26-member student board <br/>
+- Built and managed 800+ member community <br/>
+- Organised technical seminars & competitions <br/>
+- Conducted quizzes, workshops & knowledge sessions <br/>
+- Coordinated speakers, teams & event operations`],
+
+["Mechanza Symposium","Event Head · 2019",`
+- Led national-level technical & non-technical events <br/>
+- Managed planning, execution & event operations <br/>
+- Coordinated sponsors, participants & organising teams <br/>
+- Managed inter-college participation & competitions <br/>
+- Delivered events within timelines & budgets`],
+
+["TCNM – iMAD NGO","Volunteer · 2018",`
+- Worked with underprivileged school children <br/>
+- Conducted English learning & communication activities <br/>
+- Helped build confidence through interactive sessions <br/>
+- Supported educational & community initiatives <br/>
+- Collaborated with volunteers for outreach programs`],
+
+["National Service Scheme","Volunteer · 2018–2020",`
+- Participated in community development initiatives <br/>
+- Organised tree plantation & blood donation drives <br/>
+- Contributed to cleanliness & social awareness campaigns <br/>
+- Participated in International Yoga Day activities <br/>
+- Completed 7-day rural community service camp`]
+];
+const AWARDS = [
+  "🌟 Rising Star of the Year (2021) – UXLI Limited",
+  "🏅 Multi-time Star of the Month – UXLI Limited",
+  "🏸 Badminton Men's Doubles Winner – Fusion 2019",
+  "🥇 ALOHA Abacus 2x District Winner & 1x State Winner"
+];
+const OTHERS_MORE = [
+  [
+    "Bosch Ltd – Project Management Intern (2019)",
+    "Engineered process improvements using Lean, 5S, Kaizen, and Six Sigma methodologies; successfully optimized Cleanliness First Pass Yield (FPY) on the assembly line."
+  ],
+  [
+    "Academic Research Publication – IRJET (May 2020)",
+    "Co-authored and published research paper titled 'Design and Development of Honing Tool' (Vol 07, Issue 05), focusing on precision manufacturing and tooling optimization."
+  ]
+];
+
+/* ===== 9. RENDERING ENGINE — normally no need to edit ===== */
+const $=(s)=>document.querySelector(s);
+let lang="en";
+const chips=a=>a.map(x=>`<span class="tag">${x}</span>`).join("");
+/* BRAND LOGOS: each brand lists several logo sources, tried in order; if none loads, a coloured badge (b) shows.
+   To add a brand: BRAND.key={u:[url1,url2],b:"TEXT|#background|#textcolour"} then use "key" as the icon in TOOLCATS. */
+const D="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/",SI="https://cdn.simpleicons.org/",SO="https://cdn.jsdelivr.net/npm/simple-icons@9.21.0/icons/";
+const dv=n=>["original","plain","original-wordmark","plain-wordmark"].map(v=>`${D}${n}/${n}-${v}.svg`);
+const fv=d=>`https://www.google.com/s2/favicons?domain=${d}&sz=128`; /* official site icon: works for almost every brand */
+const br=(si,dev,dom,b)=>({u:[...(si?[SI+si]:[]),...(dev?[`${D}${dev}/${dev}-original.svg`]:[]),fv(dom),...(dev?[`${D}${dev}/${dev}-plain-wordmark.svg`]:[])],b});
+const BRAND={
+ aws:br("","amazonwebservices","aws.amazon.com","aws|#232F3E|#FF9900"), azure:br("","azure","azure.microsoft.com","Az|#0078D4"),
+ snowflake:br("snowflake","snowflake","snowflake.com","❄|#29B5E8"), s3:br("amazons3","","aws.amazon.com","S3|#3F8624"),
+ lambda:br("awslambda","","aws.amazon.com","λ|#ED7100"), redshift:br("amazonredshift","","aws.amazon.com","RS|#8C4FFF"),
+ glue:br("awsglue","","aws.amazon.com","Glue|#8C4FFF"), stepfn:br("awsstepfunctions","","aws.amazon.com","SF|#E7157B"),
+ dbt:br("dbt","dbt","getdbt.com","dbt|#FF694B"), coursera:br("coursera","coursera","coursera.org","C|#0056D2"), oracle:br("","oracle","oracle.com","O|#F80000")
+};
+/* site used for the fallback logo of other tools (add yours here) */
+const DOM={python:"python.org",mysql:"mysql.com",apachespark:"spark.apache.org",pandas:"pandas.pydata.org",numpy:"numpy.org",scikitlearn:"scikit-learn.org",pytorch:"pytorch.org","si:huggingface":"huggingface.co","si:langchain":"langchain.com","si:mlflow":"mlflow.org",apacheairflow:"airflow.apache.org","si:airbyte":"airbyte.com","si:clickhouse":"clickhouse.com","si:apachesuperset":"superset.apache.org",git:"git-scm.com",github:"github.com",azuredevops:"dev.azure.com",postman:"postman.com"};
+function iconFail(i){const l=i.dataset.f?i.dataset.f.split("|"):[];if(l.length){i.dataset.f=l.slice(1).join("|");i.src=l[0];return}
+ const[t,bg,fg]=i.dataset.b.split("|");i.outerHTML=`<b class="ico badge" style="background:${bg};color:${fg||"#fff"}">${t}</b>`}
+/* ICONS. ic("e:😀") emoji | ic("i:name") built-in svg (mail, linkedin, download) | ic("b:TXT|#bg|#fg") badge | ic("brand") from BRAND above
+   | ic("si:name") simple-icons | ic("name") devicon. */
+const SVG={
+ mail:'<path d="M3 6h18v12H3zM3 7l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+ linkedin:'<path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.55-1 1.9-1.9 3.9-1.9 4 0 4.75 2.6 4.75 6V21h-4v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V21h-4z"/>',
+ download:'<path d="M12 3v12M7.5 10.5 12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'
+};
+const ic=(s,n="",c="")=>{
+ if(s.startsWith("e:"))return `<b class="ico emo ${c}">${s.slice(2)}</b>`;
+ if(s.startsWith("i:"))return `<svg class="ico ${c}" viewBox="0 0 24 24">${SVG[s.slice(2)]}</svg>`;
+ if(s.startsWith("b:")){const[t,bg,fg]=s.slice(2).split("|");return `<b class="ico badge ${c}" style="background:${bg};color:${fg||"#fff"}">${t}</b>`}
+ const B=BRAND[s]||{u:[s.startsWith("si:")?SI+s.slice(3):`${D}${s}/${s}-original.svg`,...(DOM[s]?[fv(DOM[s])]:[])],b:(n||"?")[0]+"|#0a84ff"};
+ const[u0,...rest]=B.u;
+ return `<img class="ico ${c}" src="${u0}" alt="${n}" data-f="${rest.join("|")}" data-b="${B.b}" loading="lazy" onerror="iconFail(this)">`};
+/* Certificate logos: Coursera is checked first so any "... · Coursera" cert gets the Coursera logo */
+const logoFor=i=>/Coursera/i.test(i)?"coursera":/Snowflake/i.test(i)?"snowflake":/Oracle/i.test(i)?"oracle":/Microsoft|Azure/i.test(i)?"azure":"coursera";
+const loop = (items, cls = "") => {
+  /* 4 or fewer items: centred, no scrolling */
+  if (items.length <= 4) return `<div class="static-row ${cls}">${items.join("")}</div>`;
+  return `<div class="marq ${cls}"><div class="track">${items.join("") + items.join("")}</div></div>`;
+};
+const editor=(f,L)=>`<div class="editor"><div class="edbar"><em></em><em></em><em></em><span>${f}</span></div><pre>${L.map((l,i)=>`<span class="ln">${i+1}</span>${l}`).join("\n")}</pre></div>`;
+/* SLIDER: slider(id, listOfHtml, [perViewDesktop, tablet, mobile], "h" or "v").
+   "h" = slides sideways and shows a glimpse of the next card; "v" (certificates) = slides upwards, 2 rows per view, dots on the right.
+   If the items fit in one view, no dots/arrow are shown. Add items to the lists above and sliders appear automatically. */
+const SLS={};
+const slider=(id,items,pv=[4,2,1],mode="h")=>`<div class="sl ${mode}" data-id="${id}" data-pv="${pv}"><div class="slwin"><div class="sltrack">${items.map(x=>`<div class="slitem">${x}</div>`).join("")}</div></div><div class="cdots sldots"></div></div>`;
+function initSliders(){document.querySelectorAll(".sl").forEach(el=>{
+ const id=el.dataset.id,v=el.classList.contains("v"),pv=+el.dataset.pv.split(",")[innerWidth>1000?0:innerWidth>640?1:2],
+  t=el.querySelector(".sltrack"),its=[...t.children],n=its.length,per=v?pv*2:pv,pg=Math.ceil(n/per),
+  mx=v?Math.ceil(Math.max(n-per,0)/pv)*pv:Math.max(n-per,0),start=p=>Math.min(p*per,mx);
+ const cur=SLS[id]=Math.min(SLS[id]||0,pg-1);
+ el.style.setProperty("--pv",pv);el.style.setProperty("--cols",pv);el.classList.toggle("single",pg<=1);
+ if(v){let H=0;for(let p=0;p<pg;p++){const s=start(p),e=Math.min(s+per,n)-1;H=Math.max(H,its[e].offsetTop+its[e].offsetHeight-its[s].offsetTop)}
+  el.style.setProperty("--h",H+"px");t.style.transform=`translateY(${-its[start(cur)].offsetTop}px)`}
+ else t.style.transform=`translateX(calc(${-start(cur)} * (var(--cw) + var(--gap))))`;
+ const d=el.querySelector(".sldots");
+ d.innerHTML=pg>1?Array.from({length:pg},(_,i)=>`<i class="${i==cur?"on":""}" data-i="${i}"></i>`).join("")+`<button class="btn mini slnext" title="Next">›</button>`:"";
+ d.querySelectorAll("i").forEach(x=>x.onclick=()=>{SLS[id]=+x.dataset.i;initSliders()});
+ const b=d.querySelector(".slnext");if(b)b.onclick=()=>{SLS[id]=(cur+1)%pg;initSliders()}})}
+addEventListener("resize",initSliders);addEventListener("load",initSliders);
+/* SECTIONS: reorder, delete or add a block here to change the page. */
+const SECTIONS=[
+ {id:"home",nav:"home",html:()=>`<div class="hero"><div>
+   <h1>${T[lang].hi}</h1><p class="muted" style="font-size:1.15rem">${T[lang].role}</p><p>${T[lang].intro}</p>
+   <p class="hand quote">${T[lang].quote}</p><p class="muted">${T[lang].badminton}</p>
+   <pre class="glass code"><span class="k">about_me</span> = {
+  <span class="s">"full_name"</span>: <span class="s">"Tejas Ravindra Patil"</span>,
+  <span class="s">"role"</span>: <span class="s">"AI Data Engineer"</span>,
+  <span class="s">"experience_yrs"</span>: 5.5,
+  <span class="s">"stack"</span>: [<span class="s">"Snowflake"</span>, <span class="s">"AWS"</span>, <span class="s">"Azure"</span>, <span class="s">"Python"</span>, <span class="s">"SQL"</span>, <span class="s">"Gen AI"</span>],
+  <span class="s">"status"</span>: <span class="s">"Open to Data Engineering & AI/ML roles"</span>
+}</pre></div>
+   <div><div class="avatar"><img src="${ME.photo}" alt="Tejas Patil" onerror="this.style.visibility='hidden'"></div>
+   <div class="avail glass"><button class="sw" id="sw" aria-label="availability"></button><b id="avl">${T[lang].avail}</b></div></div></div>`},
+ {id:"why",nav:"why",html:()=>`<h2>${T[lang].why}</h2>${slider("why",WHY.map(w=>`<div class="cell glass"><div style="font-size:1.7rem">${w[0]}</div><h3>${w[1]}</h3><p class="muted">${w[2]}</p></div>`))}`},
+ {id:"exp",nav:"exp",html:()=>`<h2>${T[lang].exp}</h2><div class="tl">${EXP.map(e=>`<div class="glass card"><span class="tag">${e[1]}</span><h3>${e[0]}</h3><p class="muted">${e[2]}</p></div>`).join("")}</div>
+   <h3 class="hand" style="font-size:1.8rem;margin-top:34px">Clients & domains I've worked with</h3>
+   <div style="margin-top:14px">${slider("cl",CLIENTS.slice(0,-1).map(c=>`<div class="glass card"><div class="cname">${c[3]?`<img class="clogo" src="${c[3]}" alt="">`:""}<b>${c[0]}</b></div><span class="muted">${c[2]}</span><br><span class="tag">${c[1]}</span></div>`),[3,2,1])}</div>
+   <p class="hand" style="font-size:1.6rem;text-align:center;margin-top:22px">& many other demos / PoCs / pilots across healthcare, finance, education, manufacturing and more ✏️</p>`},
+ {id:"proj",nav:"proj",html:()=>`<h2>${T[lang].proj}</h2>${slider("pr",PROJ.map(p=>`<div class="glass card"><a class="corner" href="${p[3]}" target="_blank" title="GitHub">GitHub ↗</a><h3 style="padding-right:80px">${p[0]}</h3><p class="muted">${p[2]}</p>${chips(p[1].split(" · "))}</div>`),[2,2,1])}`},
+ {id:"cert",nav:"cert",html:()=>`<h2>${T[lang].cert}</h2>${slider("ct",CERT.map(c=>`<div class="glass card"><a class="corner" href="${c[3]}" target="_blank" title="Verify">↗</a>${ic(logoFor(c[1]),c[1])}<h3 style="padding-right:30px;margin-top:8px">${c[0]}</h3><p class="muted">${c[1]}</p>${chips(c[2])}</div>`),[3,2,1],"v")}`},
+{
+  id: "say",
+  nav: "say",
+  html: () => `<h2>${T[lang].say}</h2><div class="grid">${SAY.map(s => `
+    <div class="glass card" style="display: flex; flex-direction: column; height: 100%; align-items: flex-start; text-align: left; padding: 24px;">
+      <div class="q" style="font-size: 2.8rem; line-height: 1; margin-bottom: -10px; opacity: 0.85;">“</div>
+      <p style="font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.6; font-weight: 400; color: var(--text); margin-bottom: 22px; letter-spacing: -0.01em;">
+        ${s.text}
+      </p>
+      <div style="margin-top: auto; display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+        <span class="hl" style="font-family: 'Space Grotesk', 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em; display: inline-block; margin-top: 0; margin-bottom: 4px;">
+          ${s.name}
+        </span>
+        <div class="muted" style="font-size: 0.82rem; margin-top: 2px;">${s.role}</div>
+        <div class="mail" style="margin-top: 2px;">${s.mail}</div>
+      </div>
+    </div>`).join("")}</div>`
+},
+ {id:"others",nav:"others",html:()=>`<h2>${T[lang].others}</h2>
+   <h3>Tools & Technologies</h3>${TOOLCATS.map((c,i)=>`<h4 class="cat muted">${c[0]}</h4>${loop(c[1].map(t=>`<div class="glass tool">${ic(t[1],t[0],t[2]||"")}${t[0]}</div>`),i%2?"rev":"")}`).join("")}
+   <h3 style="margin-top:34px;margin-bottom:12px">Leadership & Social Work</h3>
+   ${slider("ld",LEAD.map(l=>`<div class="cell glass"><b>${l[0]}</b><br><span class="tag">${l[1]}</span><p class="muted">${l[2]}</p></div>`))}
+   <h3 style="margin-top:30px">Awards</h3><div>${AWARDS.map(a=>`<span class="glass pill" style="display:inline-block;margin:6px 6px 0 0">${a}</span>`).join("")}</div>
+   <details><summary>Earlier background (Mechanical) & Publication</summary><div class="grid" style="margin-top:12px">${OTHERS_MORE.map(o=>`<div class="glass card"><b>${o[0]}</b><p class="muted">${o[1]}</p></div>`).join("")}</div></details>`},
+ {id:"contact",nav:"contact",html:()=>`<h2>${T[lang].contact}</h2><div class="grid">
+   <div class="glass card"><b class="hand" style="font-size:1.5rem">For recruiters ✉️</b>
+<pre class="code" style="font-size:0.9rem;white-space:pre-wrap"><span class="k">To:</span> ${ME.email}
+<span class="k">From:</span> &lt;recruiter email&gt;
+<span class="k">Subject:</span> Opportunity for AI Data Engineer
+<span class="k">Email:</span>
+Hi Tejas, this is &lt;name&gt; from &lt;organisation&gt;.
+Your profile matches our requirement and we'd like to move ahead with the hiring process.
+<span class="k">With regards,</span> &lt;recruiter name&gt;</pre>
+
+   <a class="btn primary" id="mailBtn" href="#">${ic("i:mail")} Send this draft</a></div>
+   <div class="glass card"><b class="hand" style="font-size:1.5rem">Just want to connect? 🤝</b>
+   <pre class="code hand" style="font-size:1.0rem;white-space:pre-wrap">Hey Tejas! I'm &lt;name&gt; working on &lt;topic&gt;.
+Loved your data engineering work, let's connect!</pre>
+   <div style="text-align:center;margin-top:16px"><a class="btn primary" href="${ME.linkedin}" target="_blank">${ic("i:linkedin")} LinkedIn</a></div></div></div>
+   <div class="links">${LINKS.map(l=>`<a class="btn" href="${l[1]}" target="_blank" ${l[0]==="Resume"?"download":""}>${l[2]?ic(l[2],l[0],l[3]||""):""} ${l[0]}${l[0]==="Resume"?" "+ic("i:download"):""}</a>`).join("")}</div>`}
+];
+function render(){
+  $("#nav").innerHTML=SECTIONS.map(s=>`<a href="#${s.id}">${T[lang][s.nav]}</a>`).join("");
+  $("#app").innerHTML=SECTIONS.map(s=>`<section id="${s.id}">${s.html()}</section>`).join("");
+  initSliders();const sw=$("#sw");sw.onclick=()=>sw.classList.toggle("off");
+  $("#mailBtn").href=`mailto:${ME.email}?subject=Opportunity for AI Data Engineer&body=Hi Tejas, `;
+}
+/* Signature replays on click; brand also scrolls home */
+$("#brand").onclick=()=>{const s=document.querySelector(".sig");s.classList.remove("go");void s.getBBox();s.classList.add("go")};
+$("#theme").onclick=()=>{const d=document.documentElement.dataset.theme==="dark";
+  document.documentElement.dataset.theme=d?"light":"dark";$("#theme").textContent=d?"🌙":"☀️"};
+$("#lang").onchange=e=>{lang=e.target.value;document.documentElement.lang=lang;render()};
+$("#yr").textContent=new Date().getFullYear();
+render();
 </script>
 </body>
 </html>
