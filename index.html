@@ -80,6 +80,19 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:26px;letter-spacing:-.02em}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:99px;border:1px solid var(--edge);background:var(--glass);color:var(--text);text-decoration:none;cursor:pointer;font:inherit;font-weight:600}
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:0}
 .corner{position:absolute;top:16px;right:16px;text-decoration:none;font-size:1.2rem;color:var(--text)}
+.edu-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.edu-container .glass.card {
+  /* Restricts max width so single items don't stretch */
+  max-width: 400px; 
+  width: auto;
+}
 /* ===== Extras: strips, timeline, carousel, icons ===== */
 .btn{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .strip{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(var(--w,165px),1fr))}
@@ -220,15 +233,15 @@ const ME={name:"Tejas Patil",email:"tejaspatil53@gmail.com",
 const T={
  en:{home:"Home",why:"Why hire me",exp:"Experience",proj:"Projects",cert:"Certification",say:"What Leaders & Peers Say",others:"Others",contact:"Contact",
      hi:"Hi, I'm Tejas 👋",role:"AI & Cloud Data Engineer",avail:"Available for hire",
-     intro:"5.5+ years turning complex enterprise data into scalable cloud solutions across Telecom, Transport, Manufacturing and others — now building AI-ready data with xLytix.",
+     intro:"5.5+ years transforming complex enterprise data into scalable, business-ready analytics — now building AI-ready data solutions with xLytix.",
      quote:"Jack of all 😉 — in the AI era, nobody stays master of one.",badminton:"Beyond the desk, find me on the badminton court 🏸"},
  de:{home:"Start",why:"Warum ich",exp:"Erfahrung",proj:"Projekte",cert:"Zertifizierungen",say:"Das sagen Führungskräfte & Kollegen",others:"Sonstiges",contact:"Kontakt",
      hi:"Hallo, ich bin Tejas 👋",role:"KI- & Cloud-Dateningenieur",avail:"Bereit für neue Herausforderungen",
-     intro:"5,5+ Jahre Erfahrung darin, komplexe Unternehmensdaten in skalierbare Cloud-Lösungen in den Bereichen Telekommunikation, Transport, Fertigung und mehr zu verwandeln — jetzt baue ich KI-fähige Daten mit xLytix auf.",
+     intro:"„Mehr als 5,5 Jahre Erfahrung in der Transformation komplexer Unternehmensdaten in skalierbare, geschäftsbereite Analyselösungen – jetzt bei xLytix für ki-bereite Datenlösungen im Einsatz.",
      quote:"Tausendsassa 😉 — in der KI-Ära bleibt niemand Meister von nur einem Fach.",badminton:"Abseits des Schreibtischs findet man mich auf dem Badmintonplatz 🏸"},
  fr:{home:"Accueil",why:"Pourquoi moi",exp:"Expérience",proj:"Projets",cert:"Certifications",say:"Témoignages de leaders & pairs",others:"Autres",contact:"Contact",
      hi:"Salut, moi c'est Tejas 👋",role:"Ingénieur Data IA & Cloud",avail:"Disponible pour de nouvelles opportunités",
-     intro:"Plus de 5,5 ans d'expérience à transformer des données d'entreprise complexes en solutions cloud évolutives (Télécom, Transport, Industrie et autres) — aujourd'hui, je crée des données prêtes pour l'IA avec xLytix.",
+     intro:"Plus de 5,5 ans d'expérience à transformer des données d'entreprise complexes en solutions d'analyse scalables et prêtes pour les affaires — aujourd'hui au service de solutions de données prêtes pour l'IA avec xLytix.",
      quote:"Touche-à-tout 😉 — à l'ère de l'IA, plus personne n'est maître d'un seul domaine.",badminton:"Hors du bureau, retrouvez-moi sur un terrain de badminton 🏸"}
 };
 
@@ -292,7 +305,7 @@ error handling.<br />
    TO ADD A LOGO: 1) make a folder "logos" next to index.html and drop e.g. vodacom.png in it
                   2) delete the comment marks around the logo path of that client below. It appears left of the name. */
 const CLIENTS=[
- ["Vodacom, South Africa","Telecom","S3 → Glue → Redshift","logos/vodacom_logo.svg"],
+ ["Vodacom, South Africa","Telecom","S3 → Glue → Redshift","logos/Vodacom_logo.svg"],
  ["StarHub, Singapore","Telecom","Netezza → Data Pipes → Snowflake","logos/sh_logo.svg"],
  ["Transport for Wales Rail, UK","Transportation","# RestAPIs (Azure Web App/Functions) → Cosmos DB <br /># ADLS → ADF → Synapse","logos/tfwr_logo.png"],
  ["JBT Corporation, USA","Manufacturing","SFTP/ADLS → ADF → Synapse","logos/jbt_logo.png"],
@@ -315,7 +328,7 @@ const CERT=[
 /* Replace text/email with real testimonials and names */
 const SAY=[
   {
-    text:"Tejas started his journey with us as an intern in late 2020 and has grown remarkably into a strong senior and technical leadership professional. His ability to take ownership, manage responsibilities, contribute to successful client deliveries, and adapt to new technologies has consistently stood out. His technical versatility, learning mindset, and ability to take on new challenges have made him a dependable and valuable member of our organization.",
+    text:"Tejas started his journey with us as an intern in late 2020 and has grown into a strong senior and technical professional. He has consistently delivered excellent results across client projects, demonstrating ownership, adaptability, and a willingness to embrace new technologies. He also contributes significantly to xLytix by testing the product, identifying gaps and enhancements, working closely with product owners, and performing client demos, pilots, and POCs to validate their real-world use cases. His combination of technical expertise, product mindset, and client-facing skills makes him a valuable contributor to our organisation.",
     name:"Avinash Walvekar",
     role:"Director, COO & Co-founder, UXLI Limited",
     mail:"awalvekar@uxli.com"
@@ -327,7 +340,7 @@ const SAY=[
     mail:"araje@uxli.com"
   },
   {
-    text:"Tejas has worked with me across several major projects, contributing from solution brainstorming and data architecture design through to end-to-end implementation. He has a strong understanding of data engineering and DevOps, combined with the ability to take ownership and turn architectural ideas into practical, scalable solutions. His certifications across leading cloud platforms and growing expertise in Generative AI further strengthen his ability to design modern, AI-ready data solutions and adapt to evolving technology landscapes.",
+    text:"Tejas has worked with me across several major projects, contributing from solution brainstorming and data architecture design through to end-to-end implementation. He has a strong understanding of Data engineering and DevOps, combined with the ability to take ownership and turn architectural ideas into practical, scalable solutions. His certifications across leading cloud platforms and in Gen AI further strengthen his ability to design modern, AI-ready data solutions and adapt to evolving technology landscapes.",
     name:"Gary Kanda",
     role:"Solution & Data Architect, Head at Data, UXLI Limited",
     mail:"gkanda@uxli.com"
@@ -405,11 +418,23 @@ const LEAD=[
 - Participated in International Yoga Day activities <br/>
 - Completed 7-day rural community service camp`]
 ];
+const LANGUAGES = [
+	"English (Full Professional) | Hindi & Marathi (Native) | German & French (Elementary)"
+];
 const AWARDS = [
   "🌟 Rising Star of the Year (2021) – UXLI Limited",
   "🏅 Multi-time Star of the Month – UXLI Limited",
   "🏸 Badminton Men's Doubles Winner – Fusion 2019",
   "🥇 ALOHA Abacus 2x District Winner & 1x State Winner"
+];
+const EDUCATION = [
+  {
+    degree: "Bachelors of Engineering (Mechanical)",
+    institution: `Savitribai Phule Pune University <br />
+	CGPA: 8.37/10 - First Class with Distinction`,
+    duration: "2016 - 2020",
+    logo: "logos/sppu_logo.png" // Optional
+  }
 ];
 const OTHERS_MORE = [
   [
@@ -500,7 +525,7 @@ const SECTIONS=[
    <div class="avail glass"><button class="sw" id="sw" aria-label="availability"></button><b id="avl">${T[lang].avail}</b></div></div></div>`},
  {id:"why",nav:"why",html:()=>`<h2>${T[lang].why}</h2>${slider("why",WHY.map(w=>`<div class="cell glass"><div style="font-size:1.7rem">${w[0]}</div><h3>${w[1]}</h3><p class="muted">${w[2]}</p></div>`))}`},
  {id:"exp",nav:"exp",html:()=>`<h2>${T[lang].exp}</h2><div class="tl">${EXP.map(e=>`<div class="glass card"><span class="tag">${e[1]}</span><h3>${e[0]}</h3><p class="muted">${e[2]}</p></div>`).join("")}</div>
-   <h3 class="hand" style="font-size:1.8rem;margin-top:34px">Clients & domains I've worked with</h3>
+   <h3 class="hand" style="font-size:1.8rem;margin-top:34px">Top Clients & domains I've worked with</h3>
    <div style="margin-top:14px">${slider("cl",CLIENTS.slice(0,-1).map(c=>`<div class="glass card"><div class="cname">${c[3]?`<img class="clogo" src="${c[3]}" alt="">`:""}<b>${c[0]}</b></div><span class="muted">${c[2]}</span><br><span class="tag">${c[1]}</span></div>`),[3,2,1])}</div>
    <p class="hand" style="font-size:1.6rem;text-align:center;margin-top:22px">& many other demos / PoCs / pilots across healthcare, finance, education, manufacturing and more ✏️</p>`},
  {id:"proj",nav:"proj",html:()=>`<h2>${T[lang].proj}</h2>${slider("pr",PROJ.map(p=>`<div class="glass card"><a class="corner" href="${p[3]}" target="_blank" title="GitHub">GitHub ↗</a><h3 style="padding-right:80px">${p[0]}</h3><p class="muted">${p[2]}</p>${chips(p[1].split(" · "))}</div>`),[2,2,1])}`},
@@ -527,6 +552,22 @@ const SECTIONS=[
    <h3>Tools & Technologies</h3>${TOOLCATS.map((c,i)=>`<h4 class="cat muted">${c[0]}</h4>${loop(c[1].map(t=>`<div class="glass tool">${ic(t[1],t[0],t[2]||"")}${t[0]}</div>`),i%2?"rev":"")}`).join("")}
    <h3 style="margin-top:34px;margin-bottom:12px">Leadership & Social Work</h3>
    ${slider("ld",LEAD.map(l=>`<div class="cell glass"><b>${l[0]}</b><br><span class="tag">${l[1]}</span><p class="muted">${l[2]}</p></div>`))}
+   <h3 style="margin-top:34px;margin-bottom:12px">Education</h3>
+   <div style="margin-top:14px">
+   <div class="edu-container">
+    ${EDUCATION.map(e => `
+      <div class="glass card">
+        <div class="cname">
+          ${e.logo ? `<img class="clogo" src="${e.logo}" alt="">` : ""}
+          <b>${e.degree}</b>
+        </div>
+        <span class="muted">${e.institution}</span><br>
+        <span class="tag">${e.duration}</span>
+      </div>
+    `).join("")}
+  </div>
+</div>
+   <h3 style="margin-top:30px">Languages</h3><div>${LANGUAGES.map(a=>`<span class="glass pill" style="display:inline-block;margin:6px 6px 0 0">${a}</span>`).join("")}</div>
    <h3 style="margin-top:30px">Awards</h3><div>${AWARDS.map(a=>`<span class="glass pill" style="display:inline-block;margin:6px 6px 0 0">${a}</span>`).join("")}</div>
    <details><summary>Earlier background (Mechanical) & Publication</summary><div class="grid" style="margin-top:12px">${OTHERS_MORE.map(o=>`<div class="glass card"><b>${o[0]}</b><p class="muted">${o[1]}</p></div>`).join("")}</div></details>`},
  {id:"contact",nav:"contact",html:()=>`<h2>${T[lang].contact}</h2><div class="grid">
